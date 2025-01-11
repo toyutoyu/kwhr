@@ -7,6 +7,7 @@ on:
 
 env:
   MY_AWS_REGION: 'ap-northeast-1'
+  MY_CLOUDFRONT_DISTRIBUTION_ID: 'E3VXZF708JLL8T'
   AWS_ROLENAME: 'role_github_action_s3sync'
   AWS_S3_BUCKET: 'kwhr-portfolio.com'  # あなたのS3バケット名
   SOURCE_DIR: 'out'  # Next.js の静的エクスポートディレクトリ
@@ -45,3 +46,8 @@ jobs:
         run: |
             aws s3 sync ${SOURCE_DIR}/ s3://${{ env.AWS_S3_BUCKET }}/ --delete
             aws s3 website s3://${{env.AWS_S3_BUCKET}}/ --index-document index.html --error-document index.html
+      # 5. CloudFrontキャッシュの無効化
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ env.MY_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+    
