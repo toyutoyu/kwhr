@@ -1,0 +1,46 @@
+name: Deploy Next.js to S3
+
+on:
+  push:
+    branches:
+      - main  # デプロイをトリガーするブランチ
+
+env:
+  AWS_REGION: 'ap-northeast-1'
+  AWS_S3_BUCKET: 'kwhr-portfolio.com'  # あなたのS3バケット名
+  SOURCE_DIR: 'out'  # Next.js の静的エクスポートディレクトリ
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      # 必要に応じて追加の権限を設定
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # 必要に応じてバージョンを変更
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and export Next.js app
+        run: npm run deploy
+
+      - name: Configure AWS credentials with IAM Role
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{secrets.AWS_ACCOUNT_ID}}:role/${{env.AWS_ROLENAME}}
+          aws-region: ${{env.MY_AWS_REGION}}
+
+      - name: Deploy to S3
+        run: |
+            aws s3 sync build/ s3://${{env.AWS_S3_BUCKET}}/ --delete
+            aws s3 website s3://${{env.AWS_S3_BUCKET}}/ --index-document index.html --error-document index.html
