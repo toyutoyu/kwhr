@@ -6,7 +6,8 @@ on:
       - main  # デプロイをトリガーするブランチ
 
 env:
-  AWS_REGION: 'ap-northeast-1'
+  MY_AWS_REGION: 'ap-northeast-1'
+  AWS_ROLENAME: 'role_github_action_s3sync'
   AWS_S3_BUCKET: 'kwhr-portfolio.com'  # あなたのS3バケット名
   SOURCE_DIR: 'out'  # Next.js の静的エクスポートディレクトリ
 
