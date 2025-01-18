@@ -8,8 +8,6 @@ import r_anime from "../../public/lottie/portfolio/r.json";
 import t_anime from "../../public/lottie/portfolio/t.json";
 
 export default function Home() {
-  const [isStopped, setIsStopped] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState("");
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -63,29 +61,29 @@ export default function Home() {
             options={pOptions}
             height={800}
             width={250}
-            isStopped={isStopped}
-            isPaused={isPaused}
+            isStopped={false}
+            isPaused={false}
           />
           <Lottie
             options={oOptions}
             height={800}
             width={250}
-            isStopped={isStopped}
-            isPaused={isPaused}
+            isStopped={false}
+            isPaused={false}
           />
           <Lottie
             options={rOptions}
             height={800}
             width={250}
-            isStopped={isStopped}
-            isPaused={isPaused}
+            isStopped={false}
+            isPaused={false}
           />
           <Lottie
             options={tOptions}
             height={800}
             width={200}
-            isStopped={isStopped}
-            isPaused={isPaused}
+            isStopped={false}
+            isPaused={false}
           />
         </div>
 
