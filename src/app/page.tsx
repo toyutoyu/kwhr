@@ -1,5 +1,5 @@
 "use client";
-import { FormEvent, useState } from "react";
+// import { FormEvent, useState } from "react";
 import Lottie from "react-lottie";
 import p_anime from "../../public/lottie/portfolio/p.json";
 import o_anime from "../../public/lottie/portfolio/o.json";
