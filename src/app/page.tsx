@@ -1,95 +1,108 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { FormEvent, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import Lottie from "react-lottie";
+import p_anime from "../../public/lottie/portfolio/p.json";
+import o_anime from "../../public/lottie/portfolio/o.json";
+import r_anime from "../../public/lottie/portfolio/r.json";
+import t_anime from "../../public/lottie/portfolio/t.json";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [isStopped, setIsStopped] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState("");
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            はじめる
-          </a>
+    // reCAPTCHAトークンを送信
+    const res = await fetch("/api/verify-recaptcha", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token: recaptchaToken }),
+    });
+
+    const result = await res.json();
+    if (result.success) {
+      alert("reCAPTCHA verification passed!");
+    } else {
+      alert("reCAPTCHA verification failed!");
+    }
+  };
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const pOptions = {
+    ...defaultOptions,
+    animationData: p_anime,
+  };
+
+  const oOptions = {
+    ...defaultOptions,
+    animationData: o_anime,
+  };
+  const rOptions = {
+    ...defaultOptions,
+    animationData: r_anime,
+  };
+  const tOptions = {
+    ...defaultOptions,
+    animationData: t_anime,
+  };
+
+  return (
+    <div>
+      <main>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <Lottie
+            options={pOptions}
+            height={800}
+            width={250}
+            isStopped={isStopped}
+            isPaused={isPaused}
+          />
+          <Lottie
+            options={oOptions}
+            height={800}
+            width={250}
+            isStopped={isStopped}
+            isPaused={isPaused}
+          />
+          <Lottie
+            options={rOptions}
+            height={800}
+            width={250}
+            isStopped={isStopped}
+            isPaused={isPaused}
+          />
+          <Lottie
+            options={tOptions}
+            height={800}
+            width={200}
+            isStopped={isStopped}
+            isPaused={isPaused}
+          />
         </div>
+
+        {/* <form onSubmit={handleSubmit}>
+          <label>
+            Name:
+            <input type="text" name="name" required />
+          </label>
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""}
+            onChange={(token: string | null) => {
+              token && setRecaptchaToken(token);
+            }}
+          />
+          <button type="submit">Submit</button>
+        </form> */}
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          学ぶ
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          例
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          nextjs.orgへ飛ぶ →
-        </a>
-      </footer>
     </div>
   );
 }
