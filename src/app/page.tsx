@@ -1,13 +1,7 @@
 "use client";
 // import { FormEvent, useState } from "react";
-import Lottie from "react-lottie";
-import p_anime from "../../public/lottie/portfolio/p.json";
-import o_anime from "../../public/lottie/portfolio/o.json";
-import r_anime from "../../public/lottie/portfolio/r.json";
-import t_anime from "../../public/lottie/portfolio/t.json";
-import f_anime from "../../public/lottie/portfolio/f.json";
-import l_anime from "../../public/lottie/portfolio/l.json";
-import i_anime from "../../public/lottie/portfolio/i.json";
+
+import Portfolio from "@/components/lottie/Portfolio";
 
 export default function Home() {
   // const [recaptchaToken, setRecaptchaToken] = useState("");
@@ -30,103 +24,12 @@ export default function Home() {
   //     alert("reCAPTCHA verification failed!");
   //   }
   // };
-  const defaultOptions = {
-    loop: false,
-    autoplay: true,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  const pOptions = {
-    ...defaultOptions,
-    animationData: p_anime,
-  };
-
-  const oOptions = {
-    ...defaultOptions,
-    animationData: o_anime,
-  };
-  const rOptions = {
-    ...defaultOptions,
-    animationData: r_anime,
-  };
-  const tOptions = {
-    ...defaultOptions,
-    animationData: t_anime,
-  };
-  const fOptions = {
-    ...defaultOptions,
-    animationData: f_anime,
-  };
-  const lOptions = {
-    ...defaultOptions,
-    animationData: l_anime,
-  };
-  const iOptions = {
-    ...defaultOptions,
-    animationData: i_anime,
-  };
 
   return (
     <div>
-      <main>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <Lottie
-            options={pOptions}
-            // height={800}
-            // width={250}
-            isStopped={false}
-            isPaused={false}
-
-          />
-          <Lottie
-            options={oOptions}
-            // height={800}
-            // width={250}
-            isStopped={false}
-            isPaused={false}
-
-          />
-          <Lottie
-            options={rOptions}
-            // height={800}
-            // width={250}
-            isStopped={false}
-            isPaused={false}
-
-          />
-          <Lottie
-            options={tOptions}
-            // height={800}
-            // width={200}
-            isStopped={false}
-            isPaused={false}
-
-          />
-          <Lottie
-            options={fOptions}
-            // height={800}
-            // width={200}
-            isStopped={false}
-            isPaused={false}
-
-          />
-          <Lottie
-            options={lOptions}
-            // height={800}
-            // width={200}
-            isStopped={false}
-            isPaused={false}
-
-          />
-          <Lottie
-            options={iOptions}
-            // height={800}
-            // width={200}
-            isStopped={false}
-            isPaused={false}
-
-          />
+      <main style={{ position: "relative", width: "100%" }}>
+        <div style={{ position: "absolute", top: "0px", width: "100%" }}>
+          <Portfolio />
         </div>
 
         {/* <form onSubmit={handleSubmit}>
