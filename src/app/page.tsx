@@ -2,6 +2,8 @@
 // import { FormEvent, useState } from "react";
 
 import Portfolio from "@/components/lottie/Portfolio";
+import Overlay from "@/components/overlay/Overlay";
+import Image from "next/image";
 
 export default function Home() {
   // const [recaptchaToken, setRecaptchaToken] = useState("");
@@ -27,11 +29,26 @@ export default function Home() {
 
   return (
     <div>
+
       <main style={{ position: "relative", width: "100%" }}>
-        <div style={{ position: "absolute", top: "0px", width: "100%" }}>
+        <div
+          style={{
+            position: "absolute",
+            top: "100px",
+            width: "100%",
+            height: "100%",
+          }}
+        >
           <Portfolio />
         </div>
-
+        <div style={{ position: "absolute", top: "380px", width: "100%" }}>
+          <Image
+            src="/images/2023-2025.svg"
+            alt="2023-2025"
+            width="700"
+            height="400"
+          />
+        </div>
         {/* <form onSubmit={handleSubmit}>
           <label>
             Name:

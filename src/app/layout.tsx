@@ -3,6 +3,7 @@ import { Chakra_Petch } from "next/font/google";
 import "./globals.css";
 import StyledComponentsRegistry from "@/lib/StyledComponentsRegistry";
 import Header from "@/components/header/Header";
+import Overlay from "@/components/overlay/Overlay";
 
 const chakraPetch = Chakra_Petch({
   weight: ["300", "400", "500", "600", "700"],
@@ -36,6 +37,8 @@ export default function RootLayout({
             backgroundSize: "100%",
           }}
         >
+          <Overlay />
+
           <Header />
 
           {children}

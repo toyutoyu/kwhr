@@ -73,7 +73,7 @@ const headerItems = [
 export default function Header() {
   return (
     <StyledHeader>
-      <Image src={logo} alt="ロゴ" height={38} />
+      <Image src={logo} alt="ロゴ" height={28} />
       <StyledNav>
         <StyledUl>
           {headerItems.map((item, index) => (

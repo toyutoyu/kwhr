@@ -23,8 +23,7 @@ export default function Portfolio() {
   return (
     <div
       style={{
-        display: "flex",
-        alignItems: "center",
+        position: "absolute",
         transform: "scale(1)",
         width: "100%",
       }}
