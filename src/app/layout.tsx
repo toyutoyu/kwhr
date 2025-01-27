@@ -1,13 +1,27 @@
 import type { Metadata } from "next";
-import { Chakra_Petch } from "next/font/google";
+import { Chakra_Petch, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import StyledComponentsRegistry from "@/lib/StyledComponentsRegistry";
-import Header from "@/components/header/Header";
-import Overlay from "@/components/overlay/Overlay";
+import App from "./App";
+import { StyledBody } from "@/components/container/style/Style";
+import localFont from "next/font/local";
 
 const chakraPetch = Chakra_Petch({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
+  variable: "--font-chakraPetch",
+});
+
+const notojp = Noto_Sans_JP({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-notojp",
+});
+
+const makinas4 = localFont({
+  src: "../../public/fonts/Makinas-4-Flat.otf",
+  variable: "--font-makinas4",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -27,22 +41,11 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
         />
-        <body
-          className={`${chakraPetch.className}`}
-          style={{
-            backgroundColor: "#DFDFDF",
-            backgroundImage: "url(/images/isometric.png)",
-            backgroundRepeat: "repeat",
-            backgroundAttachment: "fixed",
-            backgroundSize: "100%",
-          }}
+        <StyledBody
+          className={`${chakraPetch.className} ${chakraPetch.variable} ${notojp.variable} ${makinas4.variable}`}
         >
-          <Overlay />
-
-          <Header />
-
-          {children}
-        </body>
+          <App>{children}</App>
+        </StyledBody>
       </html>
     </StyledComponentsRegistry>
   );

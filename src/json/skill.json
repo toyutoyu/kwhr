@@ -1,0 +1,60 @@
+{
+  "ui": [
+    {
+      "logo": "/images/logo/figma_logo.svg",
+      "skill": "Figma",
+      "rating": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/ai_logo.svg",
+      "skill": "Adobe Illustrator",
+      "rating": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/ae_logo.svg",
+      "skill": "Adobe AfterEffects",
+      "rating": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/xd_logo.svg",
+      "skill": "Adobe XD",
+      "rating": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    }
+  ],
+  "Front-end": [
+    {
+      "logo": "/images/logo/html_logo.svg",
+      "skill": "HTML5",
+      "rating": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/css3_logo.svg",
+      "skill": "CSS3",
+      "rating": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/js_logo.svg",
+      "skill": "JavaScript",
+      "rating": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/ts_logo.svg",
+      "skill": "TypeScript",
+      "rating": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/flutter_logo.svg",
+      "skill": "Flutter",
+      "rating": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    }
+  ]
+}
