@@ -7,6 +7,7 @@ import {
   StyledInnerSection,
   StyledSectionBlueShapeBackground,
 } from "@/components/section/style/Style";
+import Stack from "../stack/Stack";
 
 const StyledProfileWrapper = styled.div`
   position: relative;
@@ -26,23 +27,10 @@ export default function ProfileSection() {
   return (
     <Section id="profile">
       <StyledSectionBlueShapeBackground>
+        <SectionTitle odd>PROFILE</SectionTitle>
         <StyledInnerSection>
-          <SectionTitle odd>PROFILE</SectionTitle>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
+          <Stack direction="row" alignItems="center" justifyContent="center">
+            <Stack alignItems="center" justifyContent="center">
               <Image
                 src="/apng/ラジカセ.png"
                 alt=""
@@ -70,6 +58,7 @@ export default function ProfileSection() {
                   style={{
                     fontFamily: "var(--font-makinas4)",
                     marginTop: "40px",
+                    color: `${DefineColor.white}`,
                   }}
                 >
                   <tr>
@@ -86,7 +75,7 @@ export default function ProfileSection() {
                   </tr>
                 </table>
               </StyledProfileWrapper>
-            </div>
+            </Stack>
             <div
               style={{
                 backgroundColor: "transparent",
@@ -139,7 +128,7 @@ export default function ProfileSection() {
                 </p>
               </div>
             </div>
-          </div>
+          </Stack>
         </StyledInnerSection>
       </StyledSectionBlueShapeBackground>
     </Section>

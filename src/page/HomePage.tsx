@@ -1,11 +1,12 @@
 "use client";
 
 import Portfolio from "@/components/lottie/Portfolio";
-import ContactSection from "@/section/ContactSection";
-import ProfileSection from "@/section/ProfileSection";
-import SectionTitle from "@/section/SectionTitle";
-import SkillSection from "@/section/SkillSection";
-import WorksSection from "@/section/WorksSection";
+import ContactSection from "@/components/section/ContactSection";
+import ProfileSection from "@/components/section/ProfileSection";
+import SectionTitle from "@/components/section/SectionTitle";
+import SkillSection from "@/components/section/SkillSection";
+import WorksSection from "@/components/section/WorksSection";
+import Stack from "@/components/stack/Stack";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -22,7 +23,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <main style={{ position: "relative", width: "100%" }}>
+      <main style={{ position: "relative", width: "100%", overflowX: "hidden" }}>
         {/* <div
           style={{
             position: "relative",
@@ -31,7 +32,7 @@ export default function HomePage() {
             height: "100%",
           }}
         > */}
-          {/* <Portfolio isPause={isPause} /> */}
+        {/* <Portfolio isPause={isPause} /> */}
         {/* </div> */}
         {/* <div style={{ position: "relative", top: "340px", width: "100%" }}>
           <Image
@@ -41,10 +42,12 @@ export default function HomePage() {
             height="400"
           />
         </div> */}
-        <ProfileSection />
-        <SkillSection />
-        <WorksSection />
-        <ContactSection />
+        <Stack space="XXL">
+          <ProfileSection />
+          <SkillSection />
+          <WorksSection />
+          <ContactSection />
+        </Stack>
       </main>
     </div>
   );

@@ -14,13 +14,14 @@ import Image from "next/image";
 import StarRate from "@/components/rating/StarRate";
 import { DefineColor } from "@/theme/Color";
 import Stack from "@/components/stack/Stack";
+import { DefineFontSize } from "@/theme/fontSize";
 export default function SkillSection() {
   const { ui } = skills;
   return (
     <Section id="skill">
       <StyledSectionYelllowShapeBackground>
+        <SectionTitle>SKILL</SectionTitle>
         <StyledInnerSection>
-          <SectionTitle>SKILL</SectionTitle>
           <SkillRadarChart />
           <div
             style={{
@@ -32,7 +33,7 @@ export default function SkillSection() {
             <p
               style={{
                 color: `${DefineColor.yellow}`,
-                fontSize: "40px",
+                fontSize: `${DefineFontSize.X3L}`,
                 fontWeight: "600",
               }}
             >
@@ -45,13 +46,15 @@ export default function SkillSection() {
               backgroundColor: `${DefineColor.white}`,
               width: "100%",
               flexWrap: "wrap",
+              justifyContent: "space-between",
             }}
           >
             {ui.map((item) => (
               <div
                 style={{
                   display: "flex",
-                  padding: "20px",
+
+                  padding: "20px 40px",
                   width: "400px",
                 }}
               >

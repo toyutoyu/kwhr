@@ -26,4 +26,4 @@ const createFontSize = () => {
     .reduce((a, c) => Object.assign(a, c), {});
 };
 
-export const defaultFontSize = createFontSize();
+export const DefineFontSize = createFontSize();
