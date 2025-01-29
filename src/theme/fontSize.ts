@@ -1,7 +1,16 @@
 export const defaultBaseFontSize = 16;
 const defaultScaleFactor = 6;
 
-export type FontSize = "XXS" | "XS" | "S" | "M" | "L" | "XL" | "XXL" | "X3L";
+export type FontSize =
+  | "XXS"
+  | "XS"
+  | "S"
+  | "M"
+  | "L"
+  | "XL"
+  | "XXL"
+  | "X3L"
+  | "X4L";
 type Tokens = { [key in FontSize]: number };
 
 const Size: Tokens = {
@@ -13,6 +22,7 @@ const Size: Tokens = {
   XL: -2,
   XXL: -3,
   X3L: -4,
+  X4L: -5,
 };
 
 const createFontSize = () => {

@@ -1,7 +1,9 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
 
-const StyledSection = styled.section``;
+const StyledSection = styled.section`
+  width: 100%;
+`;
 
 type Props = {
   id: string;

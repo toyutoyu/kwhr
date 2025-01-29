@@ -25,19 +25,11 @@ type Props = {
 
 export default function Portfolio({ isPause = false }: Props) {
   return (
-    <div
-      style={{
-        position: "absolute",
-        transform: "scale(1)",
-        width: "100%",
-      }}
-    >
-      <Lottie
-        options={defaultOption}
-        isStopped={false}
-        isPaused={isPause}
-        style={defaultStyle}
-      />
-    </div>
+    <Lottie
+      options={defaultOption}
+      isStopped={false}
+      isPaused={isPause}
+      style={defaultStyle}
+    />
   );
 }

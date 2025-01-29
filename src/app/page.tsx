@@ -1,4 +1,4 @@
-import HomePage from "@/page/HomePage";
+import HomePage from "@/page/home/HomePage";
 
 export default function Home() {
   // const [recaptchaToken, setRecaptchaToken] = useState("");

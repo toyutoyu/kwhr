@@ -1,0 +1,123 @@
+import { DefineColor } from "@/theme/Color";
+import { DefineFontSize } from "@/theme/fontSize";
+import { DefineSpacing } from "@/theme/spacing";
+import styled from "styled-components";
+import Stack from "../stack/Stack";
+import Image from "next/image";
+import Rate from "../rating/Rate";
+import { MediaSize } from "@/theme/mediaSize";
+
+type Content = {
+  logo: string;
+  name: string;
+  rate: number;
+  description: string;
+};
+
+type Props = {
+  title: string;
+  contents: Array<Content>;
+};
+const StyledBoxWrapper = styled.div`
+  max-width: 800px;
+`;
+
+const StyledHead = styled.div`
+  background-color: ${DefineColor.black};
+  width: 100%;
+  padding: ${DefineSpacing.M} ${DefineSpacing.S};
+
+  @media screen and (min-width: ${MediaSize.S}) {
+    padding: ${DefineSpacing.L} ${DefineSpacing.M};
+  }
+`;
+const StyledTitle = styled.h3`
+  color: ${DefineColor.black};
+  font-size: ${DefineFontSize.XL};
+  font-weight: 600;
+  color: ${DefineColor.yellow};
+  @media screen and (min-width: ${MediaSize.S}) {
+    font-size: ${DefineFontSize.X3L};
+  }
+`;
+const StyledBox = styled.div`
+  display: flex;
+  background-color: ${DefineColor.white};
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+`;
+const StyledInnerBox = styled.div`
+  display: flex;
+  padding: 16px 20px;
+  width: 100%;
+  @media screen and (min-width: ${MediaSize.S}) {
+    padding: 20px 40px;
+    width: 400px;
+  }
+`;
+
+const StyledSkillTitle = styled.p`
+  font-weight: bold;
+  font-size: ${DefineFontSize.M};
+
+  @media screen and (min-width: ${MediaSize.S}) {
+    font-size: ${DefineFontSize.L};
+  }
+`;
+
+const StyledSkillDescription = styled.p`
+  font-size: ${DefineFontSize.XS};
+  font-family: var(--font-notojp);
+  letter-spacing: 0.075rem;
+  color: ${DefineColor.text_gray};
+  @media screen and (min-width: ${MediaSize.S}) {
+    font-size: ${DefineFontSize.M};
+  }
+`;
+
+const StyledImage = styled.div`
+  width: 48px;
+  height: 48px;
+  @media screen and (min-width: ${MediaSize.S}) {
+    width: 60px;
+    height: 60px;
+  }
+`;
+
+export default function SkillBox({ title, contents }: Props) {
+  return (
+    <StyledBoxWrapper>
+      <StyledHead>
+        <StyledTitle>{title}</StyledTitle>
+      </StyledHead>
+      <StyledBox>
+        {contents.map((content) => (
+          <StyledInnerBox>
+            <Stack direction="row" alignItems="flex-start" space="L">
+              <StyledImage>
+                <Image
+                  src={content.logo}
+                  alt={content.name}
+                  width={60}
+                  height={60}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                  }}
+                />
+              </StyledImage>
+              <Stack space="XS">
+                <StyledSkillTitle>{content.name}</StyledSkillTitle>
+                <Rate rate={content.rate} />
+                <StyledSkillDescription>
+                  {content.description}
+                </StyledSkillDescription>
+              </Stack>
+            </Stack>
+          </StyledInnerBox>
+        ))}
+      </StyledBox>
+    </StyledBoxWrapper>
+  );
+}

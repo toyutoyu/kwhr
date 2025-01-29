@@ -2,58 +2,162 @@
   "ui": [
     {
       "logo": "/images/logo/figma_logo.svg",
-      "skill": "Figma",
-      "rating": 3,
+      "name": "Figma",
+      "rate": 3,
       "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
     },
     {
       "logo": "/images/logo/ai_logo.svg",
-      "skill": "Adobe Illustrator",
-      "rating": 3,
+      "name": "Adobe Illustrator",
+      "rate": 3,
       "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
     },
     {
       "logo": "/images/logo/ae_logo.svg",
-      "skill": "Adobe AfterEffects",
-      "rating": 3,
+      "name": "Adobe AfterEffects",
+      "rate": 3,
       "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
     },
     {
       "logo": "/images/logo/xd_logo.svg",
-      "skill": "Adobe XD",
-      "rating": 3,
+      "name": "Adobe XD",
+      "rate": 3,
       "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
     }
   ],
-  "Front-end": [
+  "frontend": [
     {
       "logo": "/images/logo/html_logo.svg",
-      "skill": "HTML5",
-      "rating": 3,
+      "name": "HTML5",
+      "rate": 3,
       "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
     },
     {
       "logo": "/images/logo/css3_logo.svg",
-      "skill": "CSS3",
-      "rating": 3,
+      "name": "CSS3",
+      "rate": 3,
       "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
     },
     {
       "logo": "/images/logo/js_logo.svg",
-      "skill": "JavaScript",
-      "rating": 3,
+      "name": "JavaScript",
+      "rate": 3,
       "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
     },
     {
       "logo": "/images/logo/ts_logo.svg",
-      "skill": "TypeScript",
-      "rating": 3,
+      "name": "TypeScript",
+      "rate": 3,
       "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
     },
     {
       "logo": "/images/logo/flutter_logo.svg",
-      "skill": "Flutter",
-      "rating": 3,
+      "name": "Flutter",
+      "rate": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    }
+  ],
+  "backend": [
+    {
+      "logo": "/images/logo/ruby_logo.svg",
+      "name": "Ruby",
+      "rate": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/php_logo.svg",
+      "name": "PHP",
+      "rate": 3.5,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    }
+  ],
+  "framework": [
+    {
+      "logo": "/images/logo/react_logo.svg",
+      "name": "React",
+      "rate": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/vuejs_logo.svg",
+      "name": "Vuejs",
+      "rate": 3.5,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/nextjs_logo.svg",
+      "name": "Next.js",
+      "rate": 3.5,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/nuxtjs_logo.svg",
+      "name": "Nuxt.js",
+      "rate": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/laravel_logo.svg",
+      "name": "Laravel",
+      "rate": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/rails_logo.svg",
+      "name": "Ruby On Rails",
+      "rate": 2,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    }
+  ],
+  "cloud": [
+    {
+      "logo": "/images/logo/aws_logo.svg",
+      "name": "AWS",
+      "rate": 2.5,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/firebase_logo.svg",
+      "name": "Firebase",
+      "rate": 2,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    }
+  ],
+  "tool": [
+    {
+      "logo": "/images/logo/github_logo.svg",
+      "name": "Github",
+      "rate": 4,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/postman_logo.svg",
+      "name": "Postman",
+      "rate": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/bitbucket_logo.svg",
+      "name": "Bitbucket",
+      "rate": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/jira_logo.svg",
+      "name": "Jira",
+      "rate": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/source_tree_logo.svg",
+      "name": "SourceTree",
+      "rate": 3,
+      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+    },
+    {
+      "logo": "/images/logo/docker_logo.svg",
+      "name": "Docker",
+      "rate": 3,
       "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
     }
   ]

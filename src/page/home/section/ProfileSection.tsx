@@ -1,5 +1,5 @@
 import Section from "@/components/section/Section";
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "../../../components/section/SectionTitle";
 import styled from "styled-components";
 import Image from "next/image";
 import { DefineColor } from "@/theme/Color";
@@ -7,7 +7,9 @@ import {
   StyledInnerSection,
   StyledSectionBlueShapeBackground,
 } from "@/components/section/style/Style";
-import Stack from "../stack/Stack";
+import Stack from "../../../components/stack/Stack";
+import { MediaSize } from "@/theme/mediaSize";
+import ProfileTable from "../../../components/table/ProfileTable";
 
 const StyledProfileWrapper = styled.div`
   position: relative;
@@ -29,7 +31,7 @@ export default function ProfileSection() {
       <StyledSectionBlueShapeBackground>
         <SectionTitle odd>PROFILE</SectionTitle>
         <StyledInnerSection>
-          <Stack direction="row" alignItems="center" justifyContent="center">
+          <Stack direction={"row"} alignItems="center" justifyContent="center">
             <Stack alignItems="center" justifyContent="center">
               <Image
                 src="/apng/ラジカセ.png"
@@ -54,26 +56,7 @@ export default function ProfileSection() {
                   </p>
                   <p style={{ fontSize: "25px" }}>Kawahara Yuto</p>
                 </div>
-                <table
-                  style={{
-                    fontFamily: "var(--font-makinas4)",
-                    marginTop: "40px",
-                    color: `${DefineColor.white}`,
-                  }}
-                >
-                  <tr>
-                    <th>生年月日</th>
-                    <td>1994/11/4</td>
-                  </tr>
-                  <tr>
-                    <th>出身地</th>
-                    <td>大阪</td>
-                  </tr>
-                  <tr>
-                    <th>趣味</th>
-                    <td>登山・ボードゲーム・カラオケ</td>
-                  </tr>
-                </table>
+                <ProfileTable />
               </StyledProfileWrapper>
             </Stack>
             <div
@@ -87,9 +70,10 @@ export default function ProfileSection() {
               <Image
                 src="/images/background/bubble_frame.svg"
                 alt="吹き出し"
-                width="640"
-                height="564"
+                width="280"
+                height="283"
               />
+
               <div
                 style={{
                   alignItems: "center",

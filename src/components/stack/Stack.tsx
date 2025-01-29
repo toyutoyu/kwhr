@@ -7,7 +7,7 @@ import styled from "styled-components";
 type Props = {
   children: React.ReactNode;
   space?: SpacingTokens;
-  direction?: "column" | "row";
+  direction?: "column" | "row" | "column-reverse";
   alignItems?:
     | "center"
     | "flex-start"

@@ -2,6 +2,8 @@
 import Image from "next/image";
 import styled from "styled-components";
 import logo from "../../../public/images/logo.svg";
+import { MediaSize } from "@/theme/mediaSize";
+import { DefineSpacing } from "@/theme/spacing";
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -13,13 +15,21 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   background-color: #fff;
   z-index: 1000;
-  padding: 12px 16px;
+  padding: ${DefineSpacing.XS} ${DefineSpacing.S};
+  height: 44px;
+  @media screen and (min-width: ${MediaSize.S}) {
+    padding: ${DefineSpacing.S} ${DefineSpacing.M};
+    height: 52px;
+  }
 `;
 
 const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: ${MediaSize.S}) {
+    display: none;
+  }
 `;
 const StyledUl = styled.ul`
   display: flex;

@@ -1,6 +1,7 @@
 "use client";
 
 import { DefineColor } from "@/theme/Color";
+import { MediaSize } from "@/theme/mediaSize";
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -11,7 +12,6 @@ import {
   Legend,
   ChartOptions,
 } from "chart.js";
-import { Chakra_Petch } from "next/font/google";
 import { Radar } from "react-chartjs-2";
 import styled from "styled-components";
 
@@ -91,9 +91,14 @@ const options: ChartOptions<"radar"> = {
 };
 
 const ChartContainer = styled.div`
-  width: 400px; /* 必要な幅 */
-  height: 400px; /* 必要な高さ */
+  width: 300px; /* 必要な幅 */
+  height: 300px; /* 必要な高さ */
   margin: 0 auto; /* 中央に配置 */
+
+  @media screen and (min-width: ${MediaSize.S}) {
+    width: 400px; /* 必要な幅 */
+    height: 400px; /* 必要な高さ */
+  }
 `;
 
 export default function SkillRadarChart() {

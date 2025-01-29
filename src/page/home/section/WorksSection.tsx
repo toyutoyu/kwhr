@@ -1,5 +1,5 @@
 import Section from "@/components/section/Section";
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "../../../components/section/SectionTitle";
 import { StyledSectionBlueShapeBackground } from "@/components/section/style/Style";
 
 export default function WorksSection() {
