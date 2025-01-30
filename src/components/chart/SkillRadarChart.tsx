@@ -1,6 +1,6 @@
 "use client";
 
-import { DefineColor } from "@/theme/Color";
+import { DefineColor } from "@/theme/color";
 import { MediaSize } from "@/theme/mediaSize";
 import {
   Chart as ChartJS,
@@ -34,10 +34,10 @@ export const skillData = {
       borderWidth: 3,
       pointRadius: 6,
       pointHoverRadius: 6,
-      pointBorderColor: DefineColor.black,
-      pointBackgroundColor: DefineColor.yellow, // データポイントの背景色
+      // pointBorderColor: DefineColor.black,
+      pointBackgroundColor: DefineColor.black, // データポイントの背景色
       pointHoverBackgroundColor: DefineColor.black,
-      pointHoverBorderColor: DefineColor.yellow,
+      pointHoverBorderColor: DefineColor.black,
     },
   ],
 };
@@ -61,7 +61,7 @@ const options: ChartOptions<"radar"> = {
         count: 5,
 
         color: DefineColor.black,
-        backdropColor: DefineColor.yellow,
+        backdropColor: DefineColor.white,
         callback: (value) => Number(value).toFixed(0),
         z: 1,
         font: {

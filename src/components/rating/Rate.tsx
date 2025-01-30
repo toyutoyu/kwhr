@@ -1,4 +1,4 @@
-import { DefineColor } from "@/theme/Color";
+import { DefineColor } from "@/theme/color";
 import { MediaSize } from "@/theme/mediaSize";
 import styled from "styled-components";
 

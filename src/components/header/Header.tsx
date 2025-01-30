@@ -4,6 +4,8 @@ import styled from "styled-components";
 import logo from "../../../public/images/logo.svg";
 import { MediaSize } from "@/theme/mediaSize";
 import { DefineSpacing } from "@/theme/spacing";
+import HamburgerMenu from "../menu/BurgerMenu";
+import { DefineShadow } from "@/theme/shadow";
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -17,6 +19,7 @@ const StyledHeader = styled.header`
   z-index: 1000;
   padding: ${DefineSpacing.XS} ${DefineSpacing.S};
   height: 44px;
+  box-shadow: ${DefineShadow.LEVEL3};
   @media screen and (min-width: ${MediaSize.S}) {
     padding: ${DefineSpacing.S} ${DefineSpacing.M};
     height: 52px;
@@ -93,6 +96,7 @@ export default function Header() {
           ))}
         </StyledUl>
       </StyledNav>
+      <HamburgerMenu />
     </StyledHeader>
   );
 }

@@ -1,4 +1,4 @@
-import { DefineColor } from "@/theme/Color";
+import { DefineColor } from "@/theme/color";
 import { DefineSpacing } from "@/theme/spacing";
 import styled from "styled-components";
 

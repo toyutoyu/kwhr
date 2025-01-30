@@ -15,20 +15,18 @@ export default function SkillSection() {
   const { ui, frontend, backend, framework, cloud, tool } = skills;
   return (
     <Section id="skill">
-      <StyledSectionYelllowShapeBackground>
-        <SectionTitle>SKILL</SectionTitle>
-        <StyledInnerSection>
-          <SkillRadarChart />
-          <Stack space="X3L" justifyContent="center" alignItems="center">
-            <SkillBox title="UI/UX" contents={ui} />
-            <SkillBox title="Front-end" contents={frontend} />
-            <SkillBox title="Back-end" contents={backend} />
-            <SkillBox title="Framework" contents={framework} />
-            <SkillBox title="Cloud" contents={cloud} />
-            <SkillBox title="Tool" contents={tool} />
-          </Stack>
-        </StyledInnerSection>
-      </StyledSectionYelllowShapeBackground>
+      <SectionTitle>SKILL</SectionTitle>
+      <StyledInnerSection>
+        <SkillRadarChart />
+        <Stack space="X3L" justifyContent="center" alignItems="center">
+          <SkillBox title="UI/UX" contents={ui} />
+          <SkillBox title="Front-end" contents={frontend} />
+          <SkillBox title="Back-end" contents={backend} />
+          <SkillBox title="Framework" contents={framework} />
+          <SkillBox title="Cloud" contents={cloud} />
+          <SkillBox title="Tool" contents={tool} />
+        </Stack>
+      </StyledInnerSection>
     </Section>
   );
 }

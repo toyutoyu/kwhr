@@ -1,4 +1,4 @@
-import { DefineColor } from "@/theme/Color";
+import { DefineColor } from "@/theme/color";
 import { DefineFontSize } from "@/theme/fontSize";
 import { DefineSpacing } from "@/theme/spacing";
 import styled from "styled-components";
@@ -6,6 +6,7 @@ import Stack from "../stack/Stack";
 import Image from "next/image";
 import Rate from "../rating/Rate";
 import { MediaSize } from "@/theme/mediaSize";
+import { DefineShadow } from "@/theme/shadow";
 
 type Content = {
   logo: string;
@@ -20,6 +21,7 @@ type Props = {
 };
 const StyledBoxWrapper = styled.div`
   max-width: 800px;
+  box-shadow: ${DefineShadow.LEVEL4};
 `;
 
 const StyledHead = styled.div`
@@ -35,7 +37,7 @@ const StyledTitle = styled.h3`
   color: ${DefineColor.black};
   font-size: ${DefineFontSize.XL};
   font-weight: 600;
-  color: ${DefineColor.yellow};
+  color: ${DefineColor.white};
   @media screen and (min-width: ${MediaSize.S}) {
     font-size: ${DefineFontSize.X3L};
   }

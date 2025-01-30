@@ -2,7 +2,7 @@ import Section from "@/components/section/Section";
 import SectionTitle from "../../../components/section/SectionTitle";
 import styled from "styled-components";
 import Image from "next/image";
-import { DefineColor } from "@/theme/Color";
+import { DefineColor } from "@/theme/color";
 import {
   StyledInnerSection,
   StyledSectionBlueShapeBackground,
@@ -10,12 +10,11 @@ import {
 import Stack from "../../../components/stack/Stack";
 import { MediaSize } from "@/theme/mediaSize";
 import ProfileTable from "../../../components/table/ProfileTable";
+import TypingText from "@/components/animation/TypingText";
 
 const StyledProfileWrapper = styled.div`
   position: relative;
   color: ${DefineColor.white};
-  top: -50px;
-  left: 50px;
   &:before {
     content: "";
     position: absolute;
@@ -25,41 +24,59 @@ const StyledProfileWrapper = styled.div`
   }
 `;
 
+const StyledName = styled.h2`
+  font-family: var(--font-makinas4);
+  font-size: 36px;
+
+  @media screen and (min-width: ${MediaSize.S}) {
+    font-size: 40px;
+  }
+`;
+const StyledRomeName = styled.h3`
+  font-size: 23px;
+  @media screen and (min-width: ${MediaSize.S}) {
+    font-size: 25px;
+  }
+`;
+
+const StyledCassetteTape = styled.div`
+  position: relative;
+  top: -100px;
+  left: 0;
+  z-index: 10;
+  transform: rotate(-10.49deg);
+`;
+
+const SelfIntroductionWrapper = styled.div``;
+
 export default function ProfileSection() {
   return (
     <Section id="profile">
-      <StyledSectionBlueShapeBackground>
-        <SectionTitle odd>PROFILE</SectionTitle>
-        <StyledInnerSection>
-          <Stack direction={"row"} alignItems="center" justifyContent="center">
-            <Stack alignItems="center" justifyContent="center">
-              <Image
-                src="/apng/ラジカセ.png"
-                alt=""
-                width={500}
-                height={500}
-                style={{
-                  position: "relative",
-                  zIndex: 10,
-                  transform: "rotate(-10.49deg)",
-                }}
-              />
-              <StyledProfileWrapper>
-                <div>
-                  <p
-                    style={{
-                      fontFamily: "var(--font-makinas4)",
-                      fontSize: "40px",
-                    }}
-                  >
-                    川原 雄人
-                  </p>
-                  <p style={{ fontSize: "25px" }}>Kawahara Yuto</p>
-                </div>
-                <ProfileTable />
-              </StyledProfileWrapper>
-            </Stack>
-            <div
+      <SectionTitle odd>PROFILE</SectionTitle>
+      <StyledInnerSection>
+        <Stack direction={"row"} alignItems="center" justifyContent="center">
+          <Stack alignItems="center" justifyContent="center">
+            <SelfIntroductionWrapper>
+              <TypingText />
+              <StyledCassetteTape>
+                <Image
+                  src="/apng/ラジカセ.png"
+                  alt=""
+                  width={320}
+                  height={320}
+                />
+              </StyledCassetteTape>
+            </SelfIntroductionWrapper>
+
+            <StyledProfileWrapper>
+              <Stack>
+                <StyledName>川原 雄人</StyledName>
+                <StyledRomeName>Kawahara Yuto</StyledRomeName>
+              </Stack>
+              <ProfileTable />
+            </StyledProfileWrapper>
+          </Stack>
+          {/* <div
               style={{
                 backgroundColor: "transparent",
                 height: "564px",
@@ -111,10 +128,9 @@ export default function ProfileSection() {
                   　本ポートフォリオサイトは、私の現在のITスキルや経験内容を見える化してまとめたいと考えフルスクラッチ開発しました。3ヶ月毎にスキル棚卸しのためにサイト更新しています。
                 </p>
               </div>
-            </div>
-          </Stack>
-        </StyledInnerSection>
-      </StyledSectionBlueShapeBackground>
+            </div> */}
+        </Stack>
+      </StyledInnerSection>
     </Section>
   );
 }

@@ -5,9 +5,7 @@ import { StyledSectionYelllowShapeBackground } from "@/components/section/style/
 export default function ContactSection() {
   return (
     <Section id="contact">
-      <StyledSectionYelllowShapeBackground>
-        <SectionTitle>CONTACT</SectionTitle>
-      </StyledSectionYelllowShapeBackground>
+      <SectionTitle>CONTACT</SectionTitle>
     </Section>
   );
 }
