@@ -1,12 +1,12 @@
 import { DefineColor } from "@/theme/color";
 import { DefineFontSize } from "@/theme/fontSize";
-import { DefineSpacing } from "@/theme/spacing";
-import styled from "styled-components";
-import Stack from "../stack/Stack";
-import Image from "next/image";
-import Rate from "../rating/Rate";
 import { MediaSize } from "@/theme/mediaSize";
 import { DefineShadow } from "@/theme/shadow";
+import { DefineSpacing } from "@/theme/spacing";
+import Image from "next/image";
+import styled from "styled-components";
+import Rate from "../rating/Rate";
+import Stack from "../stack/Stack";
 
 type Content = {
   logo: string;
@@ -95,7 +95,7 @@ export default function SkillBox({ title, contents }: Props) {
       </StyledHead>
       <StyledBox>
         {contents.map((content) => (
-          <StyledInnerBox>
+          <StyledInnerBox key={content.name}>
             <Stack direction="row" alignItems="flex-start" space="L">
               <StyledImage>
                 <Image

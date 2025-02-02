@@ -1,25 +1,20 @@
 "use client";
-import Image from "next/image";
-import styled from "styled-components";
-import logo from "../../../public/images/logo.svg";
+import { DefineColor } from "@/theme/color";
 import { MediaSize } from "@/theme/mediaSize";
 import { DefineSpacing } from "@/theme/spacing";
+import Link from "next/link";
+import styled from "styled-components";
 import HamburgerMenu from "../menu/BurgerMenu";
-import { DefineShadow } from "@/theme/shadow";
 
 const StyledHeader = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
-  z-index: 1000;
+  width: 100%;
   padding: ${DefineSpacing.XS} ${DefineSpacing.S};
+  background-color: white;
   height: 44px;
-  box-shadow: ${DefineShadow.LEVEL3};
+  border-bottom: 1px solid black;
   @media screen and (min-width: ${MediaSize.S}) {
     padding: ${DefineSpacing.S} ${DefineSpacing.M};
     height: 52px;
@@ -27,11 +22,12 @@ const StyledHeader = styled.header`
 `;
 
 const StyledNav = styled.nav`
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
-  @media screen and (max-width: ${MediaSize.S}) {
-    display: none;
+  font-size: 1.2rem;
+  @media screen and (min-width: ${MediaSize.S}) {
+    display: flex;
   }
 `;
 const StyledUl = styled.ul`
@@ -64,6 +60,19 @@ const StyledAnchor = styled.a`
   }
 `;
 
+const StyledHeaderWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+`;
+
 const headerItems = [
   {
     title: "PROFILE",
@@ -83,20 +92,30 @@ const headerItems = [
   },
 ];
 
+const SiteTitle = styled.h1`
+  font-size: 24px;
+  -webkit-text-stroke: 1px ${DefineColor.black};
+  color: transparent;
+`;
+
 export default function Header() {
   return (
-    <StyledHeader>
-      <Image src={logo} alt="ロゴ" height={28} />
-      <StyledNav>
-        <StyledUl>
-          {headerItems.map((item, index) => (
-            <StyledList key={`header-item-${index}`}>
-              <StyledAnchor href={item.href}>{item.title}</StyledAnchor>
-            </StyledList>
-          ))}
-        </StyledUl>
-      </StyledNav>
+    <StyledHeaderWrapper>
+      <StyledHeader>
+        <Link href="/">
+          <SiteTitle>KWHR</SiteTitle>
+        </Link>
+        <StyledNav>
+          <StyledUl>
+            {headerItems.map((item, index) => (
+              <StyledList key={`header-item-${index}`}>
+                <StyledAnchor href={item.href}>{item.title}</StyledAnchor>
+              </StyledList>
+            ))}
+          </StyledUl>
+        </StyledNav>
+      </StyledHeader>
       <HamburgerMenu />
-    </StyledHeader>
+    </StyledHeaderWrapper>
   );
 }

@@ -1,42 +1,25 @@
-import { useEffect, useState } from "react";
+import { MediaSize } from "@/theme/mediaSize";
+import styled from "styled-components";
 import Portfolio from "../lottie/Portfolio";
-import Image from "next/image";
+
+const StyledMainVisual = styled.div`
+  position: relative;
+  top: 0px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: -1;
+  @media screen and (min-width: ${MediaSize.M}) {
+    display: flex;
+  }
+`;
 
 export default function MainVisual() {
-  const [isPause, setIsPause] = useState(false);
-
-  useEffect(() => {
-    setIsPause(true);
-
-    setTimeout(() => {
-      setIsPause(false);
-    }, 2000);
-  }, []);
   return (
-    <div
-      style={{
-        position: "relative",
-        top: "0px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "100%",
-      }}
-    >
-      <Portfolio isPause={isPause} />
-      <div style={{ position: "absolute", bottom: "50px", width: "100%" }}>
-        <Image
-          src="/images/2023-2025.svg"
-          alt="2023-2025"
-          width="700"
-          height="400"
-          style={{
-            width: "70%",
-            height: "70%",
-          }}
-        />
-      </div>
-    </div>
+    <StyledMainVisual>
+      <Portfolio />
+    </StyledMainVisual>
   );
 }

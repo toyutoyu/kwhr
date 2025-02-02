@@ -1,6 +1,7 @@
 "use client";
 
 import { GlobalStyles } from "@/components/container/style/Style";
+import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import Splash from "@/components/splash/Splash";
 import { ReactNode } from "react";
@@ -14,10 +15,11 @@ export default function App({ children }: Props) {
   return (
     <>
       <Reset />
-      {/* <Splash /> */}
+      <Splash />
       <GlobalStyles />
       <Header />
       {children}
+      <Footer />
     </>
   );
 }

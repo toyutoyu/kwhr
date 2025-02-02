@@ -10,15 +10,15 @@ type Props = {
 
 const StyledSectionTitleWrapper = styled.div`
   position: relative;
+  margin-bottom: 24px;
 `;
 const StyledSectionTitle = styled.h1<{ $odd: boolean }>`
   position: relative;
-  font-size: 60px;
-  letter-spacing: 1.02rem;
+  font-size: 48px;
+  letter-spacing: 0.5rem;
   font-weight: 700;
   color: ${DefineColor.black};
   text-align: center;
-  /* ${({ $odd }) => ($odd ? "text-align: left" : "text-align: right")}; */
   z-index: 1;
   @media screen and (min-width: ${MediaSize.M}) {
     font-size: 80px;
@@ -30,9 +30,9 @@ const StyledSectionTitle = styled.h1<{ $odd: boolean }>`
 const StyledSectionTitleShadow = styled.h1<{ $odd: boolean }>`
   position: absolute;
   font-weight: 700;
-  font-size: 60px;
+  font-size: 48px;
   text-align: center;
-  letter-spacing: 1.02rem;
+  letter-spacing: 0.5rem;
   -webkit-text-stroke: 1px ${DefineColor.black};
   color: transparent;
   top: 4px;

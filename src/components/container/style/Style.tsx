@@ -1,5 +1,4 @@
 "use client";
-import { DefineColor } from "@/theme/color";
 import styled from "styled-components";
 
 export const StyledBody = styled.body`
@@ -12,8 +11,6 @@ export const StyledBody = styled.body`
     display: none;
   }
 `;
-
-// GlobalStyles.tsx
 
 import { createGlobalStyle, keyframes } from "styled-components";
 
@@ -30,12 +27,6 @@ const bgScrollingReverse = keyframes`
   }
 `;
 
-const bgScrolling = keyframes`
-  0% {
-    background-position: ${BG_WIDTH} ${BG_HEIGHT};
-  }
-`;
-
 /* ==== 3) GlobalStyleを作成 ==== */
 export const GlobalStyles = createGlobalStyle`
   /* body の基本スタイル */
@@ -44,6 +35,11 @@ export const GlobalStyles = createGlobalStyle`
     /* 背景 (画像サイズ 50x50) */
     background: url(${BG_URL}) repeat 0 0;
     /* アニメーション (vendor prefix は省略可能) */
-    animation: ${bgScrollingReverse} 0.92s infinite linear;
+    animation: ${bgScrollingReverse} 0.80s infinite linear;
+      letter-spacing: 0.05em;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 `;

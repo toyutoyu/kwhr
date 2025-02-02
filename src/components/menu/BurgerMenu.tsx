@@ -1,46 +1,46 @@
 import { DefineColor } from "@/theme/color";
 import { MediaSize } from "@/theme/mediaSize";
+import { DefineShadow } from "@/theme/shadow";
 import { useState } from "react";
 import styled from "styled-components";
 
-const BurgerMenu = styled.button<{ open: boolean }>`
+export const BurgerMenu = styled.button<{ open: boolean }>`
   position: relative;
-  width: 35px;
+  width: 30px;
   height: 30px;
   background: transparent;
   border: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
   cursor: pointer;
-  @media screen and (min-width: ${MediaSize.S}) {
-    display: none;
-  }
 
-  span,
   &::before,
-  &::after {
+  &::after,
+  span {
     content: "";
     position: absolute;
-    height: 6px;
-    background: ${({ open }) =>
-      open ? `${DefineColor.white}` : `${DefineColor.black}`};
-    transition: all 0.3s ease-in-out;
-  }
-  span {
-    top: 0px;
+    left: 0;
     width: 100%;
+    height: 2px; /* 線の太さ */
+    background: black;
+    transition: all 0.3s ease-in-out;
   }
 
   &::before {
-    width: 25px;
-    top: 12px;
+    top: 4px;
+    transform: ${({ open }) =>
+      open ? "translateY(10px) rotate(45deg)" : "none"};
+  }
+
+  /* 中央の線 (span) */
+  span {
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: ${({ open }) => (open ? 0 : 1)};
   }
 
   &::after {
-    width: 15px;
-    top: 24px;
+    bottom: 4px;
+    transform: ${({ open }) =>
+      open ? "translateY(-10px) rotate(-45deg)" : "none"};
   }
 `;
 
@@ -50,9 +50,24 @@ const MenuWrapper = styled.div<{ open: boolean }>`
   right: 0;
   width: 200px;
   background: ${DefineColor.white};
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: ${DefineShadow.LEVEL3};
   padding: 16px;
-  display: ${({ open }) => (open ? "block" : "none")};
+  opacity: ${({ open }) => (open ? "1" : "0")};
+  transition: opacity 250ms ease-in-out;
+`;
+
+const StyledBurgerMenu = styled.div`
+  background-color: white;
+  height: 44px;
+  padding: 8px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (min-width: ${MediaSize.S}) {
+    display: none;
+  }
 `;
 
 export default function HamburgerMenu() {
@@ -60,9 +75,12 @@ export default function HamburgerMenu() {
 
   return (
     <>
-      <BurgerMenu open={open} onClick={() => setOpen(!open)}>
-        <span />
-      </BurgerMenu>
+      <StyledBurgerMenu>
+        <BurgerMenu open={open} onClick={() => setOpen(!open)}>
+          <span />
+        </BurgerMenu>
+      </StyledBurgerMenu>
+
       <MenuWrapper open={open}>
         <ul>
           <li>ホーム</li>

@@ -38,7 +38,7 @@ const StyledSplash = styled.div<{ isComplete: boolean }>`
   animation: ${({ isComplete }) =>
     isComplete &&
     css`
-      ${fadeOut} 2s ease-out forwards
+      ${fadeOut} 1.5s ease-out forwards
     `};
 `;
 

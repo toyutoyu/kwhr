@@ -1,0 +1,76 @@
+{
+  "2017 - 2021": [
+    {
+      "projectName": "室外機の派生開発",
+      "overview": "既存プログラムへ新機能を追加・既存機能をアップグレード。主に仕様変更依頼対応の上流～下流工程を担当",
+      "environment": "C言語, Visual Studio",
+      "inCharge": "基本設計、詳細設計、PG、テスト"
+    },
+    {
+      "projectName": "製品販促用デモアプリケーション開発",
+      "overview": "派遣先の立花エレテックで、営業部と連携してC#による商品販促用アプリケーション開発を担当",
+      "environment": "C#, Visual Studio, Figma",
+      "inCharge": "基本設計、詳細設計、デザイン、PG、テスト"
+    }
+  ],
+  "2022": [
+    {
+      "projectName": "ランディングページ作成6本",
+      "overview": "新規サービス告知のためのランディングページを開発",
+      "environment": "Figma, Vue.js, tailwindcss",
+      "inCharge": "デザイン、PG(フロントエンド)"
+    },
+    {
+      "projectName": "Noruuu-Callcenter",
+      "overview": "コールセンター向けの既存アプリケーションを機能追加・改修し、業務効率の向上",
+      "environment": "Laravel, Figma, Vue.js, tailwindcss",
+      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+    }
+  ],
+  "2023": [
+    {
+      "projectName": "社内向けiPad用受付アプリ",
+      "overview": "社内向けのiPad用受付アプリのデザイン・開発",
+      "environment": "Figma, Flutter, Slack",
+      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+    },
+    {
+      "projectName": "Noruuu-Ride",
+      "overview": "ToB向けのホワイトレーベルな配車アプリケーションの新規開発・リリース",
+      "environment": "Laravel, Figma, Flutter",
+      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+    },
+    {
+      "projectName": "Noruuu-Ride\n(しもまちベイビータクシー)",
+      "overview": "下関市からの受託開発で、Noruuu-Rideを利用した妊婦専用のタクシー配車アプリのデザイン・開発",
+      "environment": "Laravel, Figma, Flutter, Vue.js",
+      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+    },
+    {
+      "projectName": "Noruuu-Delivery",
+      "overview": "既存の店舗向けWebアプリケーションをモダナイズするためのリファクタリング",
+      "environment": "Laravel, Figma, React",
+      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+    },
+    {
+      "projectName": "Noruuu-Enterprise",
+      "overview": "ToB向けクーポンの発行・管理・利用状況分析を一元管理するシステムを新規開発",
+      "environment": "Laravel, Figma, React",
+      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+    }
+  ],
+  "2024": [
+    {
+      "projectName": "Noruuu-Ride(LINEミニアプリ)",
+      "overview": "ToB向けの日本版ライドシェアに対応した新サービスをLINEミニアプリで提供",
+      "environment": "LINE, Laravel, Figma, Next.js",
+      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+    },
+    {
+      "projectName": "Noruuu-Sharing(オンデマンドMaaSアプリ)",
+      "overview": "ユーザーが必要なタイミングで車両を予約・利用できる乗合サービスを実現し、SaaSとして展開可能な仕組みを構築",
+      "environment": "Laravel, Figma, Next.js",
+      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+    }
+  ]
+}

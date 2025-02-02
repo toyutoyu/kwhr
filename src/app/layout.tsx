@@ -1,10 +1,10 @@
+import { StyledBody } from "@/components/container/style/Style";
+import StyledComponentsRegistry from "@/lib/StyledComponentsRegistry";
 import type { Metadata } from "next";
 import { Chakra_Petch, Noto_Sans_JP } from "next/font/google";
-import "./globals.css";
-import StyledComponentsRegistry from "@/lib/StyledComponentsRegistry";
-import App from "./App";
-import { StyledBody } from "@/components/container/style/Style";
 import localFont from "next/font/local";
+import App from "./App";
+import "./globals.css";
 
 const chakraPetch = Chakra_Petch({
   weight: ["300", "400", "500", "600", "700"],

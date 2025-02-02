@@ -1,10 +1,7 @@
 "use client";
 import Section from "@/components/section/Section";
 import SectionTitle from "../../../components/section/SectionTitle";
-import {
-  StyledInnerSection,
-  StyledSectionYelllowShapeBackground,
-} from "@/components/section/style/Style";
+import { StyledInnerSection } from "@/components/section/style/Style";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import SkillRadarChart from "@/components/chart/SkillRadarChart";
 ChartJS.register(ArcElement, Tooltip, Legend);
