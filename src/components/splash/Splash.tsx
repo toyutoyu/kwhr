@@ -1,20 +1,77 @@
-import { useEffect } from "react";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import styled, { css, keyframes } from "styled-components";
+
+const fadeOut = keyframes`
+  0% {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    border-radius: 50%;
+    width: 1600px;
+    height: 1600px;
+  }
+  100% {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    border-radius: 50%;
+    width: 0px;
+    height: 0px;
+  }
+`;
+
+// 初期状態のスタイル
+const StyledSplash = styled.div<{ isComplete: boolean }>`
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: ${({ isComplete }) =>
+    isComplete &&
+    css`
+      ${fadeOut} 1.5s ease-out forwards
+    `};
+`;
+
+// 進捗テキストのスタイル
+const StyledProgress = styled.p`
+  font-style: italic;
+  font-weight: 800;
+  color: #fff;
+  font-size: 40px;
+`;
 
 export default function Splash() {
+  const progressRef = useRef(0);
+  const [progress, setProgress] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
+
   useEffect(() => {
-    let progress = 0;
-
     const interval = setInterval(() => {
-      progress += 1;
-      // progressBar.style.width = `${progress}%`;
-      // percentageText.textContent = `${progress}%`;
-
-      if (progress >= 100) {
+      if (progressRef.current < 100) {
+        progressRef.current += 1;
+        setProgress(progressRef.current);
+      } else {
         clearInterval(interval);
-        // 読み込み完了後に次のアクションを実行する
-        //   document.getElementById("loader").style.display = "none";
+        setTimeout(() => setIsComplete(true), 500); // 少し待ってアニメーションを開始
       }
-    }, 30); // 30msごとに1%進行}
+    }, 10);
+
+    return () => clearInterval(interval); // クリーンアップ
   }, []);
-  return <></>;
+
+  return (
+    <StyledSplash isComplete={isComplete}>
+      {!isComplete && <StyledProgress>{`${progress}%`}</StyledProgress>}
+    </StyledSplash>
+  );
 }

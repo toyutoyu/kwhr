@@ -19,21 +19,17 @@ const defaultStyle: CSSProperties = {
   width: "100%",
 };
 
-export default function Portfolio() {
+type Props = {
+  isPause?: boolean;
+};
+
+export default function Portfolio({ isPause = false }: Props) {
   return (
-    <div
-      style={{
-        position: "absolute",
-        transform: "scale(1)",
-        width: "100%",
-      }}
-    >
-      <Lottie
-        options={defaultOption}
-        isStopped={false}
-        isPaused={false}
-        style={defaultStyle}
-      />
-    </div>
+    <Lottie
+      options={defaultOption}
+      isStopped={false}
+      isPaused={isPause}
+      style={defaultStyle}
+    />
   );
 }
