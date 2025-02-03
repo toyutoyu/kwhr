@@ -1,3 +1,5 @@
+import ContactPage from "@/page/contact/ContactPage";
+
 export default function page() {
-  return <>お問い合わせ</>;
+  return <ContactPage />;
 }

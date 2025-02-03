@@ -4,6 +4,8 @@ import styled from "styled-components";
 export const StyledBody = styled.body`
   position: relative;
   padding-bottom: 100px;
+  margin-top: 52px;
+
   border: none;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -32,7 +34,6 @@ const bgScrollingReverse = keyframes`
 /* ==== 3) GlobalStyleを作成 ==== */
 export const GlobalStyles = createGlobalStyle`
   body {
-    margin-top: 13.5rem;
     background: url(${BG_URL}) repeat 0 0;
     animation: ${bgScrollingReverse} 0.80s infinite linear;
     letter-spacing: 0.05em;
