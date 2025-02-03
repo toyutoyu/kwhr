@@ -3,124 +3,124 @@
     {
       "logo": "/images/logo/figma_logo.svg",
       "name": "Figma",
-      "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "rate": 4,
+      "description": "UIデザインやプロトタイプ作成を中心に活用。デザインルールの構築やコンポーネント設計も行っています。"
     },
     {
       "logo": "/images/logo/ai_logo.svg",
       "name": "Adobe Illustrator",
-      "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "rate": 2.5,
+      "description": "アイコンやロゴ制作、簡単なグラフィックデザインに使用。UIデザインの補助としてベクター画像の作成や加工も行えます。"
     },
     {
       "logo": "/images/logo/ae_logo.svg",
       "name": "Adobe AfterEffects",
-      "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "rate": 2.5,
+      "description": "UIアニメーションやモーションデザインの制作に活用。プロトタイプやデモ用の動画作成にも対応できます。"
     },
     {
       "logo": "/images/logo/xd_logo.svg",
       "name": "Adobe XD",
       "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "Figma導入前に使用していたツール。ワイヤーフレームやプロトタイプ作成の経験があります。"
     }
   ],
   "frontend": [
     {
       "logo": "/images/logo/html_logo.svg",
       "name": "HTML5",
-      "rate": 3,
+      "rate": 4,
       "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
     },
     {
       "logo": "/images/logo/css3_logo.svg",
       "name": "CSS3",
-      "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "rate": 4,
+      "description": "SCSSやCSS-in-JSを用いたスタイル設計に対応。コンポーネント指向の設計が得意です。"
     },
     {
       "logo": "/images/logo/js_logo.svg",
       "name": "JavaScript",
-      "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "rate": 4,
+      "description": "業務での開発経験が豊富。ES6以降の最新仕様に対応し、API通信や非同期処理、イベントハンドリングなど幅広く対応できます。"
     },
     {
       "logo": "/images/logo/ts_logo.svg",
       "name": "TypeScript",
-      "rate": 3,
+      "rate": 3.5,
       "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
     },
     {
       "logo": "/images/logo/flutter_logo.svg",
       "name": "Flutter",
       "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "モバイルアプリ開発の経験があります。Dart言語を使用し、クロスプラットフォームでの開発を行いました。"
     }
   ],
   "backend": [
     {
       "logo": "/images/logo/ruby_logo.svg",
       "name": "Ruby",
-      "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "rate": 2,
+      "description": "独学で学習を開始し、Ruby on Railsを用いた簡単なアプリケーション開発の経験があります。"
     },
     {
       "logo": "/images/logo/php_logo.svg",
       "name": "PHP",
       "rate": 3.5,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "Laravelを用いたAPI開発やWebアプリケーションの実装経験があり、フロントエンドとの連携もスムーズに行えます。"
     }
   ],
   "framework": [
     {
       "logo": "/images/logo/react_logo.svg",
       "name": "React",
-      "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "rate": 3.5,
+      "description": "SPAやSSRの開発経験があり、状態管理（Zustand, Redux, Context API）やパフォーマンス最適化も対応可能です。"
     },
     {
       "logo": "/images/logo/vuejs_logo.svg",
       "name": "Vuejs",
       "rate": 3.5,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "Vue2/Vue3 の経験があり、Composition API を活用した開発も行っています。"
     },
     {
       "logo": "/images/logo/nextjs_logo.svg",
       "name": "Next.js",
       "rate": 3.5,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "業務での実務経験があり、SSG/ISRの最適化、API Routesの実装など幅広く対応できます。"
     },
     {
       "logo": "/images/logo/nuxtjs_logo.svg",
       "name": "Nuxt.js",
       "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "Vue.jsベースのフレームワークとして利用。SSRや静的サイト生成の経験があります。"
     },
     {
       "logo": "/images/logo/laravel_logo.svg",
       "name": "Laravel",
       "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "Laravelを用いたAPI開発やWebアプリケーションの実装経験があり、フロントエンドとの連携もスムーズに行えます。"
     },
     {
       "logo": "/images/logo/rails_logo.svg",
       "name": "Ruby On Rails",
       "rate": 2,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "独学で学習を開始し、Ruby on Railsを用いた簡単なアプリケーション開発の経験があります。"
     }
   ],
   "cloud": [
     {
       "logo": "/images/logo/aws_logo.svg",
       "name": "AWS",
-      "rate": 2.5,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "rate": 3,
+      "description": "EC2, S3, RDS, Lambda, Amplifyなどを使用した開発経験あり。インフラの基本的な設計・構築が可能です。"
     },
     {
       "logo": "/images/logo/firebase_logo.svg",
       "name": "Firebase",
-      "rate": 2,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "rate": 3,
+      "description": "Firebase Remote Config, Authentication, Cloud Messaging を活用し、BaaSを用いたアプリ開発の経験があります。"
     }
   ],
   "tool": [
@@ -128,37 +128,37 @@
       "logo": "/images/logo/github_logo.svg",
       "name": "Github",
       "rate": 4,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "チーム開発でのGit管理に対応。ブランチ戦略やコードレビューの経験があります。"
     },
     {
       "logo": "/images/logo/postman_logo.svg",
       "name": "Postman",
       "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "APIのテストや開発時のデバッグに活用。リクエスト・レスポンスの確認やコレクションの管理が可能です。"
     },
     {
       "logo": "/images/logo/bitbucket_logo.svg",
       "name": "Bitbucket",
-      "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "rate": 4,
+      "description": "GitHubと同様に使用経験あり。CI/CDの設定やチームでの開発管理に活用しています。"
     },
     {
       "logo": "/images/logo/jira_logo.svg",
       "name": "Jira",
       "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "アジャイル開発でのタスク管理やスクラム運用の経験があります。"
     },
     {
       "logo": "/images/logo/source_tree_logo.svg",
       "name": "SourceTree",
-      "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "rate": 4,
+      "description": "Git管理をGUIで操作する際に使用。リポジトリの可視化やブランチ管理に活用。"
     },
     {
       "logo": "/images/logo/docker_logo.svg",
       "name": "Docker",
       "rate": 3,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "開発環境のコンテナ化に対応。Docker Compose を用いたマルチコンテナ環境の構築経験があります。"
     }
   ]
 }

@@ -5,7 +5,7 @@ import styled, { css, keyframes } from "styled-components";
 
 const fadeOut = keyframes`
   0% {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -15,7 +15,7 @@ const fadeOut = keyframes`
     height: 1600px;
   }
   100% {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -38,7 +38,7 @@ const StyledSplash = styled.div<{ isComplete: boolean }>`
   animation: ${({ isComplete }) =>
     isComplete &&
     css`
-      ${fadeOut} 1.5s ease-out forwards
+      ${fadeOut} 0.75s ease-in-out forwards
     `};
 `;
 

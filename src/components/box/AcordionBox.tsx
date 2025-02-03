@@ -3,10 +3,11 @@ import { DefineFontSize } from "@/theme/fontSize";
 import { MediaSize } from "@/theme/mediaSize";
 import { DefineShadow } from "@/theme/shadow";
 import { DefineSpacing } from "@/theme/spacing";
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useState } from "react";
 import styled from "styled-components";
 import AcordionMenu from "../menu/AcordionMenu";
 import Stack from "../stack/Stack";
+import Box from "./Box";
 
 type Props = {
   title: string;
@@ -38,33 +39,9 @@ const StyledTitle = styled.h3`
   }
 `;
 
-const StyledBox = styled.div<{ open: boolean; maxHeight: number }>`
-  background-color: ${DefineColor.white};
-  padding: ${DefineSpacing.M};
-  width: 100%;
-  display: ${({ open }) => (open ? "flex" : "none")};
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  border-bottom: ${({ open }) => (open ? "1px solid black" : "0")};
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  overflow: hidden;
-  max-height: ${({ maxHeight }) => `${maxHeight}px`};
-  transition: max-height 300ms ease-in-out;
-`;
-
 export default function AcordionBox({ title, children }: Props) {
   const [open, setOpen] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [maxHeight, setMaxHeight] = useState(0);
 
-  useEffect(() => {
-    if (open && contentRef.current) {
-      setMaxHeight(contentRef.current?.scrollHeight);
-    } else {
-      setMaxHeight(0);
-    }
-  }, [open, contentRef]);
   return (
     <StyledBoxWrapper>
       <StyledHead>
@@ -77,9 +54,7 @@ export default function AcordionBox({ title, children }: Props) {
           <AcordionMenu open={open} onOpen={() => setOpen(!open)} />
         </Stack>
       </StyledHead>
-      <StyledBox ref={contentRef} open={open} maxHeight={maxHeight}>
-        {children}
-      </StyledBox>
+      <Box open={open}>{children}</Box>
     </StyledBoxWrapper>
   );
 }

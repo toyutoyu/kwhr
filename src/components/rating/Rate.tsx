@@ -50,7 +50,8 @@ const StyledRate = styled.span<{ rate: number }>`
     color: ${DefineColor.black}; /* 評価の星の色 */
     width: ${({ rate }) => `calc(${rate} * ${Size.S})`}; /* 評価に応じた幅 */
     @media screen and (min-width: ${MediaSize.S}) {
-      width: ${({ rate }) => `calc(${rate} * ${Size.M})`}; /* 評価に応じた幅 */
+      width: ${({ rate }) =>
+        `calc(${rate} * ${Size.M} + (${rate} * 3.5px) )`}; /* 評価に応じた幅 */
     }
   }
 `;

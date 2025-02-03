@@ -1,0 +1,113 @@
+.message-window {
+  .message-area {
+    position: relative;
+    width: 100%;
+    > .content {
+      .background-white {
+        background-color: black;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -40;
+
+        clip-path: polygon(5% 0, 100% 0, 93% 100%, 0 85%);
+      }
+
+      .background-black {
+        background-color: white;
+        position: absolute;
+
+        width: calc(100% - 25px);
+        height: calc(100% - 12px);
+        margin-left: 5px;
+        margin-right: 20px;
+        margin-top: 5px;
+        margin-bottom: 7px;
+
+        z-index: -30;
+
+        clip-path: polygon(6% 0, 100% 0, 95% 100%, 0 83%);
+      }
+      .text-area {
+        color: black;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 5px;
+        margin-bottom: 7px;
+
+        padding-left: 8px;
+        padding-right: 16px;
+        padding-top: 20px;
+        padding-bottom: 60px;
+        @media screen and (min-width: 480px) {
+          margin-left: 50px;
+          margin-right: 50px;
+          margin-top: 5px;
+          margin-bottom: 7px;
+
+          padding-left: 30px;
+          padding-right: 30px;
+          padding-top: 15px;
+          padding-bottom: 50px;
+        }
+      }
+    }
+  }
+  @keyframes arrowWhiteAnimation {
+    0% {
+      clip-path: polygon(
+        62% 43%,
+        100% 17%,
+        100% 73%,
+        50% 100%,
+        44% 56%,
+        0 71%,
+        55% 8%
+      );
+    }
+    25% {
+      clip-path: polygon(
+        62% 43%,
+        100% 18%,
+        99% 73%,
+        50% 99%,
+        44% 56%,
+        0 72%,
+        55% 8%
+      );
+    }
+    50% {
+      clip-path: polygon(
+        61% 43%,
+        98% 17%,
+        100% 73%,
+        48% 100%,
+        43% 56%,
+        1% 71%,
+        56% 8%
+      );
+    }
+    75% {
+      clip-path: polygon(
+        62% 44%,
+        100% 17%,
+        100% 72%,
+        50% 100%,
+        44% 58%,
+        0 71%,
+        55% 9%
+      );
+    }
+    100% {
+      clip-path: polygon(
+        62% 43%,
+        100% 17%,
+        100% 73%,
+        50% 100%,
+        44% 56%,
+        0 71%,
+        55% 8%
+      );
+    }
+  }
+}

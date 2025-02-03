@@ -1,6 +1,7 @@
 import { DefineColor } from "@/theme/color";
 import { MediaSize } from "@/theme/mediaSize";
 import { DefineShadow } from "@/theme/shadow";
+import Link from "next/link";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -53,7 +54,11 @@ const MenuWrapper = styled.div<{ open: boolean }>`
   box-shadow: ${DefineShadow.LEVEL3};
   padding: 16px;
   opacity: ${({ open }) => (open ? "1" : "0")};
-  transition: opacity 250ms ease-in-out;
+  visibility: ${({ open }) => (open ? "visible" : "hidden")};
+  transition: all 250ms ease-in-out;
+  @media screen and (min-width: ${MediaSize.S}) {
+    display: none;
+  }
 `;
 
 const StyledBurgerMenu = styled.div`
@@ -70,6 +75,8 @@ const StyledBurgerMenu = styled.div`
   }
 `;
 
+const Ul = styled.ul``;
+
 export default function HamburgerMenu() {
   const [open, setOpen] = useState(false);
 
@@ -82,11 +89,20 @@ export default function HamburgerMenu() {
       </StyledBurgerMenu>
 
       <MenuWrapper open={open}>
-        <ul>
-          <li>ホーム</li>
-          <li>サービス</li>
-          <li>お問い合わせ</li>
-        </ul>
+        <Ul>
+          <li>
+            <Link href="/#profile">PROFILE</Link>
+          </li>
+          <li>
+            <Link href="/#skill">SKILL</Link>
+          </li>
+          <li>
+            <Link href="/#works">WORKS</Link>
+          </li>
+          <li>
+            <Link href="/#contact">CONTACT</Link>
+          </li>
+        </Ul>
       </MenuWrapper>
     </>
   );
