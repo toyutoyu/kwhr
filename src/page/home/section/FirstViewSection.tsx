@@ -30,6 +30,7 @@ export default function FirstViewSection() {
         </Stack>
       </StyledFirstViewWrapper>
       <MainVisual />
+
       <StyledScrollAnimation>
         <Scroll />
       </StyledScrollAnimation>

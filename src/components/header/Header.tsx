@@ -1,10 +1,11 @@
 "use client";
-import { DefineColor } from "@/theme/color";
 import { MediaSize } from "@/theme/mediaSize";
 import { DefineSpacing } from "@/theme/spacing";
+import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import HamburgerMenu from "../menu/BurgerMenu";
+import Stack from "../stack/Stack";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -76,40 +77,49 @@ const StyledHeaderWrapper = styled.div`
 const headerItems = [
   {
     title: "PROFILE",
-    href: "#profile",
+    href: "/#profile",
   },
   {
     title: "SKILL",
-    href: "#skill",
+    href: "/#skill",
   },
   {
     title: "WORKS",
-    href: "#works",
+    href: "/#works",
   },
   {
     title: "CONTACT",
-    href: "#contact",
+    href: "/#contact",
   },
 ];
 
 const SiteTitle = styled.h1`
-  font-size: 24px;
-  -webkit-text-stroke: 1px ${DefineColor.black};
-  color: transparent;
+  font-size: 22px;
+  color: black;
+  font-weight: 700;
 `;
-
 export default function Header() {
   return (
     <StyledHeaderWrapper>
       <StyledHeader>
         <Link href="/">
-          <SiteTitle>KWHR</SiteTitle>
+          <Stack direction="row" alignItems="center" space="XXS">
+            <Image
+              src="/images/k_cube.svg"
+              alt="kwhr-portfolio"
+              width={32}
+              height={32}
+            />
+            <SiteTitle>KWHR</SiteTitle>
+          </Stack>
         </Link>
         <StyledNav>
           <StyledUl>
             {headerItems.map((item, index) => (
               <StyledList key={`header-item-${index}`}>
-                <StyledAnchor href={item.href}>{item.title}</StyledAnchor>
+                <StyledAnchor>
+                  <Link href={item.href}>{item.title}</Link>
+                </StyledAnchor>
               </StyledList>
             ))}
           </StyledUl>

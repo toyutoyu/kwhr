@@ -8,7 +8,7 @@
     },
     {
       "projectName": "製品販促用デモアプリケーション開発",
-      "overview": "派遣先の立花エレテックで、営業部と連携してC#による商品販促用アプリケーション開発を担当",
+      "overview": "派遣先の立花エレテックで、営業部と協働してC#による商品販促用アプリケーション開発を担当",
       "environment": "C#, Visual Studio, Figma",
       "inCharge": "基本設計、詳細設計、デザイン、PG、テスト"
     }
@@ -24,6 +24,12 @@
       "projectName": "Noruuu-Callcenter",
       "overview": "コールセンター向けの既存アプリケーションを機能追加・改修し、業務効率の向上",
       "environment": "Laravel, Figma, Vue.js, tailwindcss",
+      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+    },
+    {
+      "projectName": "Noruuu-Delivery",
+      "overview": "既存の店舗向けWebアプリケーションをVue.jsからReactへのコンバートおよびリファクタリング",
+      "environment": "Laravel, Figma, React",
       "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
     }
   ],
@@ -44,12 +50,6 @@
       "projectName": "Noruuu-Ride\n(しもまちベイビータクシー)",
       "overview": "下関市からの受託開発で、Noruuu-Rideを利用した妊婦専用のタクシー配車アプリのデザイン・開発",
       "environment": "Laravel, Figma, Flutter, Vue.js",
-      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
-    },
-    {
-      "projectName": "Noruuu-Delivery",
-      "overview": "既存の店舗向けWebアプリケーションをモダナイズするためのリファクタリング",
-      "environment": "Laravel, Figma, React",
       "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
     },
     {

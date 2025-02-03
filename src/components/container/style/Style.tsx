@@ -2,6 +2,8 @@
 import styled from "styled-components";
 
 export const StyledBody = styled.body`
+  position: relative;
+  padding-bottom: 100px;
   border: none;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -29,17 +31,16 @@ const bgScrollingReverse = keyframes`
 
 /* ==== 3) GlobalStyleを作成 ==== */
 export const GlobalStyles = createGlobalStyle`
-  /* body の基本スタイル */
   body {
     margin-top: 13.5rem;
-    /* 背景 (画像サイズ 50x50) */
     background: url(${BG_URL}) repeat 0 0;
-    /* アニメーション (vendor prefix は省略可能) */
     animation: ${bgScrollingReverse} 0.80s infinite linear;
-      letter-spacing: 0.05em;
+    letter-spacing: 0.05em;
   }
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+
   }
 `;

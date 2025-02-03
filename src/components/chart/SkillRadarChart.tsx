@@ -4,13 +4,13 @@ import { DefineColor } from "@/theme/color";
 import { MediaSize } from "@/theme/mediaSize";
 import {
   Chart as ChartJS,
-  RadialLinearScale,
-  PointElement,
-  LineElement,
-  Filler,
-  Tooltip,
-  Legend,
   ChartOptions,
+  Filler,
+  Legend,
+  LineElement,
+  PointElement,
+  RadialLinearScale,
+  Tooltip,
 } from "chart.js";
 import { useEffect, useState } from "react";
 import { Radar } from "react-chartjs-2";
@@ -66,7 +66,6 @@ export default function SkillRadarChart() {
     datasets: [
       {
         data: [3.5, 3.5, 3, 3, 2, 2],
-        backgroundColor: "rgba(255, 255, 255, 0.5)",
         borderColor: DefineColor.black,
         borderWidth: 2,
         pointRadius: pointRadius,
@@ -97,7 +96,6 @@ export default function SkillRadarChart() {
           count: 5,
 
           color: DefineColor.black,
-          backdropColor: DefineColor.white,
           callback: (value) => Number(value).toFixed(0),
           z: 1,
           font: {

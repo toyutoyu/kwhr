@@ -28,6 +28,7 @@ const StyledTypingText = styled.p<{ textLength: number; textSizeRem: number }>`
   font-weight: 700;
   animation: ${typing} 3s steps(${({ textLength }) => textLength}),
     ${blink} 0.5s step-end infinite alternate; /*アニメーション関連*/
+  animation-delay: 2.5s;
 
   @media screen and (min-width: ${MediaSize.S}) {
     font-size: ${({ textSizeRem }) => `${textSizeRem}rem`};

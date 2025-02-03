@@ -9,7 +9,9 @@ export type SpacingTokens =
   | "L"
   | "XL"
   | "XXL"
-  | "X3L";
+  | "X3L"
+  | "X4L"
+  | "X5L";
 type Tokens = { [key in SpacingTokens]: number };
 
 const tokens: Tokens = {
@@ -22,6 +24,8 @@ const tokens: Tokens = {
   XL: 2,
   XXL: 2.5,
   X3L: 3,
+  X4L: 4,
+  X5L: 5,
 };
 
 const createSpacing = () => {

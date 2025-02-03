@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Menu = styled.button<{ open: boolean }>`
+export const Menu = styled.button<{ open: boolean; isBlack: boolean }>`
   position: relative;
   width: 20px;
   height: 20px;
@@ -16,7 +16,8 @@ export const Menu = styled.button<{ open: boolean }>`
     left: 0;
     width: 100%;
     height: 2px; /* 線の太さ */
-    background: black;
+
+    background: ${({ isBlack }) => (isBlack ? "black" : "white")};
     transition: all 0.3s ease-in-out;
   }
 
@@ -26,7 +27,6 @@ export const Menu = styled.button<{ open: boolean }>`
 `;
 
 const StyledAcordionMenu = styled.div`
-  background-color: white;
   height: 44px;
   padding: 8px;
   display: flex;
@@ -37,13 +37,14 @@ const StyledAcordionMenu = styled.div`
 type Props = {
   open: boolean;
   onOpen: () => void;
+  isBlack?: boolean;
 };
 
-export default function AcordionMenu({ open, onOpen }: Props) {
+export default function AcordionMenu({ open, onOpen, isBlack = true }: Props) {
   return (
     <>
       <StyledAcordionMenu>
-        <Menu open={open} onClick={onOpen} />
+        <Menu open={open} onClick={onOpen} isBlack={isBlack} />
       </StyledAcordionMenu>
     </>
   );

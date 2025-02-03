@@ -25,7 +25,7 @@ const makinas4 = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "kwhr",
+  title: "kwhr-portfolio",
   description: "kwhr's portfolio site",
 };
 

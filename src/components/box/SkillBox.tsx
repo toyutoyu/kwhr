@@ -4,9 +4,12 @@ import { MediaSize } from "@/theme/mediaSize";
 import { DefineShadow } from "@/theme/shadow";
 import { DefineSpacing } from "@/theme/spacing";
 import Image from "next/image";
+import { useState } from "react";
 import styled from "styled-components";
+import AcordionMenu from "../menu/AcordionMenu";
 import Rate from "../rating/Rate";
 import Stack from "../stack/Stack";
+import Box from "./Box";
 
 type Content = {
   logo: string;
@@ -21,13 +24,14 @@ type Props = {
 };
 const StyledBoxWrapper = styled.div`
   max-width: 800px;
+  width: 100%;
   box-shadow: ${DefineShadow.LEVEL4};
 `;
 
 const StyledHead = styled.div`
   background-color: ${DefineColor.black};
   width: 100%;
-  padding: ${DefineSpacing.M} ${DefineSpacing.S};
+  padding: ${DefineSpacing.XXS} ${DefineSpacing.S};
 
   @media screen and (min-width: ${MediaSize.S}) {
     padding: ${DefineSpacing.L} ${DefineSpacing.M};
@@ -35,27 +39,21 @@ const StyledHead = styled.div`
 `;
 const StyledTitle = styled.h3`
   color: ${DefineColor.black};
-  font-size: ${DefineFontSize.XL};
+  font-size: ${DefineFontSize.L};
   font-weight: 600;
   color: ${DefineColor.white};
   @media screen and (min-width: ${MediaSize.S}) {
-    font-size: ${DefineFontSize.X3L};
+    font-size: ${DefineFontSize.XXL};
   }
 `;
-const StyledBox = styled.div`
-  display: flex;
-  background-color: ${DefineColor.white};
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-`;
+
 const StyledInnerBox = styled.div`
   display: flex;
   padding: 16px 20px;
   width: 100%;
   @media screen and (min-width: ${MediaSize.S}) {
     padding: 20px 40px;
-    width: 400px;
+    width: 360px;
   }
 `;
 
@@ -72,6 +70,7 @@ const StyledSkillDescription = styled.p`
   font-size: ${DefineFontSize.XS};
   font-family: var(--font-notojp);
   letter-spacing: 0.075rem;
+  line-height: 1.25;
   color: ${DefineColor.text_gray};
   @media screen and (min-width: ${MediaSize.S}) {
     font-size: ${DefineFontSize.M};
@@ -88,12 +87,24 @@ const StyledImage = styled.div`
 `;
 
 export default function SkillBox({ title, contents }: Props) {
+  const [open, setOpen] = useState(false);
   return (
     <StyledBoxWrapper>
       <StyledHead>
-        <StyledTitle>{title}</StyledTitle>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+        >
+          <StyledTitle>{title}</StyledTitle>
+          <AcordionMenu
+            open={open}
+            onOpen={() => setOpen(!open)}
+            isBlack={false}
+          />{" "}
+        </Stack>
       </StyledHead>
-      <StyledBox>
+      <Box open={open}>
         {contents.map((content) => (
           <StyledInnerBox key={content.name}>
             <Stack direction="row" alignItems="flex-start" space="L">
@@ -119,7 +130,7 @@ export default function SkillBox({ title, contents }: Props) {
             </Stack>
           </StyledInnerBox>
         ))}
-      </StyledBox>
+      </Box>
     </StyledBoxWrapper>
   );
 }
