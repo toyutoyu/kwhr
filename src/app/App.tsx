@@ -20,7 +20,7 @@ export default function App({ children }: Props) {
       <GlobalStyles />
       <Header />
       <GoogleReCaptchaProvider
-        reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""}
+        reCaptchaKey="6LeyUbUqAAAAALL4N3pQdHcD4CMHA8YXzmKvy7gb"
         language="ja"
       >
         {children}
