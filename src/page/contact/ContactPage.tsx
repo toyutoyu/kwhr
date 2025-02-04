@@ -4,9 +4,9 @@ import Button from "@/components/button/Button";
 import SectionTitle from "@/components/section/SectionTitle";
 import Stack from "@/components/stack/Stack";
 import { DefineFontSize } from "@/theme/fontSize";
+import { MediaSize } from "@/theme/mediaSize";
 import { DefineShadow } from "@/theme/shadow";
 import { DefineSpacing } from "@/theme/spacing";
-import { useCallback } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
@@ -72,6 +72,9 @@ const StyledText = styled.p`
   letter-spacing: 1.2;
   line-height: 1.2;
   text-align: center;
+  @media screen and (min-width: ${MediaSize.S}) {
+    font-size: ${DefineFontSize.M};
+  }
 `;
 
 export default function ContactPage() {
@@ -79,7 +82,7 @@ export default function ContactPage() {
     control,
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<ContactForm>({
     mode: "onBlur",
     defaultValues: { name: "", email: "", inquiry: "" },
@@ -96,18 +99,25 @@ export default function ContactPage() {
     );
   };
 
-  const handleReCaptchaVerify = useCallback(
-    async (data: ContactForm) => {
-      if (!executeRecaptcha) {
-        return;
+  const handleReCaptchaVerify = async (data: ContactForm) => {
+    if (!executeRecaptcha) {
+      return;
+    }
+    const recaptchaToken = await executeRecaptcha("Contact");
+    if (recaptchaToken) {
+      const res = await fetch(
+        "https://ve2oyk3yje.execute-api.ap-northeast-1.amazonaws.com/verifyRecaptcha",
+        {
+          method: "post",
+          body: JSON.stringify({ token: recaptchaToken }),
+        }
+      );
+      if (res) {
+        const json = await res.json();
+        if (json.success) handleSendContact(data);
       }
-      const recaptchaToken = await executeRecaptcha("Contact");
-      if (recaptchaToken) {
-        handleSendContact(data);
-      }
-    },
-    [executeRecaptcha]
-  );
+    }
+  };
 
   return (
     <Page>

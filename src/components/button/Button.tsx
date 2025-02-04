@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import styled from "styled-components";
 
 type Props = {
-  type: "button" | "submit";
+  type?: "button" | "submit";
   children: ReactNode;
   onClick?: () => void;
 };
