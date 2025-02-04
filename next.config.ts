@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // 画像最適化を無効化
   },
-  output: "export", // 静的エクスポートを有効にする
+  // output: "export", // 静的エクスポートを有効にする
 };
 
 export default nextConfig;
