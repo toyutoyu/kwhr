@@ -106,7 +106,6 @@ export default function ContactPage() {
         return;
       }
       const recaptchaToken = await executeRecaptcha("Contact");
-      console.log({ recaptchaToken });
       if (recaptchaToken) {
         const res = await fetch(
           "https://ve2oyk3yje.execute-api.ap-northeast-1.amazonaws.com/verifyRecaptcha",
@@ -117,7 +116,6 @@ export default function ContactPage() {
         );
         if (res) {
           const json = await res.json();
-          console.log(json);
           if (json.success) handleSendContact(data);
         }
       }
