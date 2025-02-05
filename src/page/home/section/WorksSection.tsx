@@ -7,7 +7,6 @@ import works from "@/json/works.json";
 import SectionTitle from "../../../components/section/SectionTitle";
 
 export default function WorksSection() {
-  console.log({ works });
   return (
     <Section id="works">
       <SectionTitle odd>WORKS</SectionTitle>
