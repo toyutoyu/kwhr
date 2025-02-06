@@ -16,7 +16,7 @@ export default function HomePage() {
         marginTop: "52px",
       }}
     >
-      <Stack space="X5L">
+      <Stack space="X3L">
         <FirstViewSection />
         <ProfileSection />
         <SkillSection />

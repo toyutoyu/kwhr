@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Page = styled.div`
   position: relative;
+  margin-top: 52px;
   width: 100%;
-  height: calc(100vh - 100px - 52px);
+  flex: 1;
+  height: 100%;
 `;

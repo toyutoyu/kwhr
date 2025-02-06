@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 export const StyledBody = styled.body`
   position: relative;
-  padding-bottom: 100px;
-  margin-top: 52px;
-
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
   border: none;
   overflow-x: hidden;
   overflow-y: scroll;

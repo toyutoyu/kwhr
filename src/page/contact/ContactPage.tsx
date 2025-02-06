@@ -2,7 +2,6 @@
 
 import Button from "@/components/button/Button";
 import { Page } from "@/components/container/Page";
-import Portfolio from "@/components/lottie/Portfolio";
 import SectionTitle from "@/components/section/SectionTitle";
 import Stack from "@/components/stack/Stack";
 import { DefineColor } from "@/theme/color";
@@ -11,19 +10,11 @@ import { MediaSize } from "@/theme/mediaSize";
 import { DefineShadow } from "@/theme/shadow";
 import { DefineSpacing } from "@/theme/spacing";
 import { useCallback } from "react";
-import {
-  GoogleReCaptchaProvider,
-  useGoogleReCaptcha,
-} from "react-google-recaptcha-v3";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
 
 const PageInner = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   padding: 0 ${DefineSpacing.M};
 `;
 
@@ -130,102 +121,96 @@ export default function ContactPage() {
   );
 
   return (
-    <GoogleReCaptchaProvider
-      reCaptchaKey="6LeyUbUqAAAAALL4N3pQdHcD4CMHA8YXzmKvy7gb"
-      language="ja"
-    >
-      <Page>
-        <PageInner>
-          <Stack alignItems="center" justifyContent="center" space="L">
-            <Stack alignItems="center" justifyContent="center">
-              <SectionTitle>CONTACT</SectionTitle>
-              <StyledText>
-                ご興味を持っていただきまして、誠にありがとうございます。
-                <br />
-                ご不明点・ご質問がある方など、お気軽にお問い合わせください。
-              </StyledText>
-            </Stack>
-            <ContactCard>
-              <form onSubmit={handleSubmit(handleReCaptchaVerify)}>
-                <Stack space="L" alignItems="center">
-                  <Stack space="XXS">
-                    <StyledLabel htmlFor="name">お名前</StyledLabel>
-                    <Controller
-                      control={control}
-                      rules={{
-                        required: "必須項目です",
-                      }}
-                      {...register("name")}
-                      render={({ field }) => (
-                        <StyledInput
-                          type="text"
-                          id="name"
-                          maxLength={100}
-                          placeholder="お名前を入力してください"
-                          {...field}
-                        />
-                      )}
-                    />
-                    {errors.name && (
-                      <StyledErrorMessage>
-                        {errors.name.message}
-                      </StyledErrorMessage>
-                    )}
-                  </Stack>
-                  <Stack space="XXS">
-                    <StyledLabel htmlFor="email">メールアドレス</StyledLabel>
-                    <Controller
-                      control={control}
-                      rules={{
-                        required: "必須項目です",
-                      }}
-                      {...register("email")}
-                      render={({ field }) => (
-                        <StyledInput
-                          type="email"
-                          id="email"
-                          maxLength={100}
-                          placeholder="メールアドレスを入力してください"
-                          {...field}
-                        />
-                      )}
-                    />
-                    {errors.email && (
-                      <StyledErrorMessage>
-                        {errors.email.message}
-                      </StyledErrorMessage>
-                    )}
-                  </Stack>
-                  <Stack space="XXS">
-                    <StyledLabel htmlFor="email">お問い合わせ内容</StyledLabel>
-                    <Controller
-                      control={control}
-                      rules={{
-                        required: "必須項目です",
-                      }}
-                      {...register("inquiry")}
-                      render={({ field }) => (
-                        <StyledTextArea
-                          placeholder="お問い合わせ内容をご入力ください"
-                          maxLength={1000}
-                          {...field}
-                        />
-                      )}
-                    />
-                    {errors.email && (
-                      <StyledErrorMessage>
-                        {errors.email.message}
-                      </StyledErrorMessage>
-                    )}
-                  </Stack>
-                  <Button type="submit">送信する</Button>
-                </Stack>
-              </form>
-            </ContactCard>
+    <Page>
+      <PageInner>
+        <Stack alignItems="center" justifyContent="center" space="L">
+          <Stack alignItems="center" justifyContent="center">
+            <SectionTitle>CONTACT</SectionTitle>
+            <StyledText>
+              ご興味を持っていただきまして、誠にありがとうございます。
+              <br />
+              ご不明点・ご質問がある方など、お気軽にお問い合わせください。
+            </StyledText>
           </Stack>
-        </PageInner>
-        <Portfolio />
-      </Page>
-    </GoogleReCaptchaProvider>
+          <ContactCard>
+            <form onSubmit={handleSubmit(handleReCaptchaVerify)}>
+              <Stack space="L" alignItems="center">
+                <Stack space="XXS">
+                  <StyledLabel htmlFor="name">お名前</StyledLabel>
+                  <Controller
+                    control={control}
+                    rules={{
+                      required: "必須項目です",
+                    }}
+                    {...register("name")}
+                    render={({ field }) => (
+                      <StyledInput
+                        type="text"
+                        id="name"
+                        maxLength={100}
+                        placeholder="お名前を入力してください"
+                        {...field}
+                      />
+                    )}
+                  />
+                  {errors.name && (
+                    <StyledErrorMessage>
+                      {errors.name.message}
+                    </StyledErrorMessage>
+                  )}
+                </Stack>
+                <Stack space="XXS">
+                  <StyledLabel htmlFor="email">メールアドレス</StyledLabel>
+                  <Controller
+                    control={control}
+                    rules={{
+                      required: "必須項目です",
+                    }}
+                    {...register("email")}
+                    render={({ field }) => (
+                      <StyledInput
+                        type="email"
+                        id="email"
+                        maxLength={100}
+                        placeholder="メールアドレスを入力してください"
+                        {...field}
+                      />
+                    )}
+                  />
+                  {errors.email && (
+                    <StyledErrorMessage>
+                      {errors.email.message}
+                    </StyledErrorMessage>
+                  )}
+                </Stack>
+                <Stack space="XXS">
+                  <StyledLabel htmlFor="email">お問い合わせ内容</StyledLabel>
+                  <Controller
+                    control={control}
+                    rules={{
+                      required: "必須項目です",
+                    }}
+                    {...register("inquiry")}
+                    render={({ field }) => (
+                      <StyledTextArea
+                        placeholder="お問い合わせ内容をご入力ください"
+                        maxLength={1000}
+                        {...field}
+                      />
+                    )}
+                  />
+                  {errors.email && (
+                    <StyledErrorMessage>
+                      {errors.email.message}
+                    </StyledErrorMessage>
+                  )}
+                </Stack>
+                <Button type="submit">送信する</Button>
+              </Stack>
+            </form>
+          </ContactCard>
+        </Stack>
+      </PageInner>
+    </Page>
   );
 }
