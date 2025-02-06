@@ -4,6 +4,7 @@ import { DefineShadow } from "@/theme/shadow";
 import Link from "next/link";
 import { useState } from "react";
 import styled from "styled-components";
+import Stack from "../stack/Stack";
 
 export const BurgerMenu = styled.button<{ open: boolean }>`
   position: relative;
@@ -90,18 +91,33 @@ export default function HamburgerMenu() {
 
       <MenuWrapper open={open}>
         <Ul>
-          <li>
-            <Link href="/#profile">PROFILE</Link>
-          </li>
-          <li>
-            <Link href="/#skill">SKILL</Link>
-          </li>
-          <li>
-            <Link href="/#works">WORKS</Link>
-          </li>
-          <li>
-            <Link href="/#contact">CONTACT</Link>
-          </li>
+          <Stack space="M">
+            <li>
+              <Link href="/#profile" onClick={() => setOpen(false)}>
+                PROFILE
+              </Link>
+            </li>
+            <li>
+              <Link href="/#skill" onClick={() => setOpen(false)}>
+                SKILL
+              </Link>
+            </li>
+            <li>
+              <Link href="/#gallery" onClick={() => setOpen(false)}>
+                GALLERY
+              </Link>
+            </li>
+            <li>
+              <Link href="/#works" onClick={() => setOpen(false)}>
+                WORKS
+              </Link>
+            </li>
+            <li>
+              <Link href="/#contact" onClick={() => setOpen(false)}>
+                CONTACT
+              </Link>
+            </li>
+          </Stack>
         </Ul>
       </MenuWrapper>
     </>

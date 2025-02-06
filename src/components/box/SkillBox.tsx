@@ -71,7 +71,7 @@ const StyledSkillDescription = styled.p`
   font-family: var(--font-notojp);
   letter-spacing: 0.075rem;
   line-height: 1.25;
-  color: ${DefineColor.text_gray};
+  color: ${DefineColor.GRAY_700};
   @media screen and (min-width: ${MediaSize.S}) {
     font-size: ${DefineFontSize.M};
   }

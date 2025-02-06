@@ -9,7 +9,7 @@ import SectionTitle from "../../../components/section/SectionTitle";
 export default function WorksSection() {
   return (
     <Section id="works">
-      <SectionTitle odd>WORKS</SectionTitle>
+      <SectionTitle>WORKS</SectionTitle>
       <StyledInnerSection>
         <Stack space="M" alignItems="center" justifyContent="center">
           {Object.entries(works)

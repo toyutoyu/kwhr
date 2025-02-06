@@ -9,7 +9,7 @@ export default function ContactSection() {
   const router = useRouter();
   return (
     <Section id="contact">
-      <SectionTitle>CONTACT</SectionTitle>
+      <SectionTitle odd>CONTACT</SectionTitle>
       <StyledInnerSection>
         <Stack alignItems="center" justifyContent="center">
           <Button onClick={() => router.push("/contact")}>お問い合わせ</Button>

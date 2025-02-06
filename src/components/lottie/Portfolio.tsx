@@ -1,7 +1,7 @@
 "use client";
+import { CSSProperties } from "react";
 import Lottie from "react-lottie";
 import portfolio from "../../../public/lottie/portfolio/data.json";
-import { CSSProperties } from "react";
 
 const defaultOption = {
   loop: false,
@@ -17,6 +17,7 @@ const defaultStyle: CSSProperties = {
   top: "0px",
   left: "0px",
   width: "100%",
+  zIndex: "-1",
 };
 
 type Props = {

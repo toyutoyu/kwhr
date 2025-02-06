@@ -84,6 +84,10 @@ const headerItems = [
     href: "/#skill",
   },
   {
+    title: "GALLERY",
+    href: "/#gallery",
+  },
+  {
     title: "WORKS",
     href: "/#works",
   },
