@@ -6,9 +6,9 @@ import Portfolio from "../lottie/Portfolio";
 
 const StyledMainVisual = styled.div`
   position: relative;
-  top: 50%;
-  transform: translateY(-70%);
-  display: flex;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -16,10 +16,7 @@ const StyledMainVisual = styled.div`
   z-index: -1;
   @media screen and (min-width: ${MediaSize.M}) {
     display: flex;
-    top: -10%;
-    left: 50%;
     width: 80%;
-    transform: translate(-50%, -0);
   }
 `;
 

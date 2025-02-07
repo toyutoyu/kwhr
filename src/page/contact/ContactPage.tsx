@@ -2,6 +2,7 @@
 
 import Button from "@/components/button/Button";
 import { Page } from "@/components/container/Page";
+import Section from "@/components/section/Section";
 import SectionTitle from "@/components/section/SectionTitle";
 import Stack from "@/components/stack/Stack";
 import { DefineColor } from "@/theme/color";
@@ -122,7 +123,7 @@ export default function ContactPage() {
 
   return (
     <Page>
-      <PageInner>
+      <Section id="contact">
         <Stack alignItems="center" justifyContent="center" space="L">
           <Stack alignItems="center" justifyContent="center">
             <SectionTitle>CONTACT</SectionTitle>
@@ -210,7 +211,7 @@ export default function ContactPage() {
             </form>
           </ContactCard>
         </Stack>
-      </PageInner>
+      </Section>
     </Page>
   );
 }

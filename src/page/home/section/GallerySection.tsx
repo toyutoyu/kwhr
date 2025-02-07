@@ -29,6 +29,7 @@ const Title = styled.h5`
   font-family: var(--font-notojp);
   font-size: ${DefineFontSize.M};
   font-weight: 700;
+  line-height: 1.2;
   @media screen and (min-width: ${MediaSize.S}) {
     font-size: ${DefineFontSize.L};
   }
@@ -56,6 +57,31 @@ export default function GallerySection() {
       <SectionTitle odd>GALLERY</SectionTitle>
       <StyledInnerSection>
         <Stack alignItems="center" justifyContent="center" space="M">
+          <Link href="/portfolio/003">
+            <Card>
+              <Stack direction="row" alignItems="flex-start" space="M">
+                <StyledPortfolioImage>
+                  <Image
+                    src="/images/IMG_0008.png"
+                    alt="ポートフォリオサイトのトップ画像"
+                    width={183.6}
+                    height={130.56}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+                </StyledPortfolioImage>
+
+                <Stack space="S">
+                  <Title>社内向けiPad用受付アプリ</Title>
+                  <Description>
+                    Flutterで個人開発したものを社内向けに公開しました。
+                  </Description>
+                </Stack>
+              </Stack>
+            </Card>
+          </Link>
           <Link href="/portfolio/002">
             <Card>
               <Stack direction="row" alignItems="flex-start" space="M">
@@ -73,7 +99,9 @@ export default function GallerySection() {
                 </StyledPortfolioImage>
 
                 <Stack space="S">
-                  <Title>デザインアセット</Title>
+                  <Title>
+                    LP制作/ロゴ・ブランディング企画/デザインルール策定
+                  </Title>
                   <Description>
                     作成したデザインアセットなどをまとめております。
                   </Description>
