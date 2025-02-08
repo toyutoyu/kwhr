@@ -10,7 +10,7 @@ import { DefineFontSize } from "@/theme/fontSize";
 import { MediaSize } from "@/theme/mediaSize";
 import { DefineShadow } from "@/theme/shadow";
 import { DefineSpacing } from "@/theme/spacing";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
@@ -77,6 +77,7 @@ const StyledText = styled.p`
 `;
 
 export default function ContactPage() {
+  const [isLoading, setIsLoading] = useState(false);
   const {
     control,
     register,
@@ -103,6 +104,7 @@ export default function ContactPage() {
       if (!executeRecaptcha) {
         return;
       }
+      setIsLoading(true);
       const recaptchaToken = await executeRecaptcha("Contact");
       if (recaptchaToken) {
         const res = await fetch(
@@ -117,6 +119,7 @@ export default function ContactPage() {
           if (json.success) handleSendContact(data);
         }
       }
+      setIsLoading(false);
     },
     [executeRecaptcha]
   );
@@ -206,7 +209,9 @@ export default function ContactPage() {
                     </StyledErrorMessage>
                   )}
                 </Stack>
-                <Button type="submit">送信する</Button>
+                <Button type="submit" loading={isLoading}>
+                  送信する
+                </Button>
               </Stack>
             </form>
           </ContactCard>

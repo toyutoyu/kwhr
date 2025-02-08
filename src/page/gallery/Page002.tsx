@@ -22,6 +22,15 @@ const Title = styled.h2`
     font-size: ${DefineFontSize.XXL};
   }
 `;
+
+const WhiteTitle = styled(Title)`
+  color: white;
+  font-size: ${DefineFontSize.XL};
+  @media screen and (min-width: ${MediaSize.S}) {
+    font-size: ${DefineFontSize.X3L};
+  }
+`;
+
 const Description = styled.p`
   font-family: var(--font-notojp);
   font-size: ${DefineFontSize.XS};
@@ -32,8 +41,21 @@ const Description = styled.p`
     font-size: ${DefineFontSize.M};
   }
 `;
+const Square = styled.div`
+  width: 36px;
+  height: 36px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-15deg);
+  @media screen and (min-width: ${MediaSize.S}) {
+    width: 60px;
+    height: 60px;
+  }
+`;
 
-export default function DesignPage() {
+export default function Page002() {
   return (
     <Page>
       <Section id="gallery">
@@ -42,7 +64,18 @@ export default function DesignPage() {
           <Stack space="X5L">
             <Stack space="L" justifyContent="center" alignItems="center">
               <Stack space="M" justifyContent="center" alignItems="center">
-                <Title>ランディンページ制作</Title>
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="center"
+                  space="XXS"
+                >
+                  <Square>
+                    <WhiteTitle>ラ</WhiteTitle>
+                  </Square>
+                  <Title>ンディンページ制作</Title>
+                </Stack>
+
                 <Description>
                   ランディングページ制作において、デザインとコーディングを一貫して担当。
                   <br />
@@ -67,7 +100,17 @@ export default function DesignPage() {
             <Stack space="XS" justifyContent="center" alignItems="center">
               <Stack space="L" justifyContent="center" alignItems="center">
                 <Stack space="M" justifyContent="center" alignItems="center">
-                  <Title>ロゴ制作・ブランディング企画</Title>
+                  <Stack
+                    direction="row"
+                    alignItems="center"
+                    justifyContent="center"
+                    space="XXS"
+                  >
+                    <Square>
+                      <WhiteTitle>ロ</WhiteTitle>
+                    </Square>
+                    <Title>ゴ制作・ブランディング企画</Title>
+                  </Stack>
                   <Description>
                     AI自動配車システム「Noruuu」のコンセプトを深く掘り下げ、ブランドの核となる価値をロゴへと具現化。
                     <br />
@@ -103,7 +146,17 @@ export default function DesignPage() {
             </Stack>
             <Stack space="L" justifyContent="center" alignItems="center">
               <Stack space="M" justifyContent="center" alignItems="center">
-                <Title>デザインルール作成</Title>
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="center"
+                  space="XXS"
+                >
+                  <Square>
+                    <WhiteTitle>デ</WhiteTitle>
+                  </Square>
+                  <Title>ザインルール策定</Title>
+                </Stack>
                 <Description>
                   カラーパレットやタイポグラフィといったビジュアル面だけでなく、ボタンやフォームなどのUIコンポーネント設計、各種状態のガイドラインをまとめ、チーム全体で共有できるデザインルールとして整備しました。
                 </Description>

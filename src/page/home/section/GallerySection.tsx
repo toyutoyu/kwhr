@@ -57,15 +57,15 @@ export default function GallerySection() {
       <SectionTitle odd>GALLERY</SectionTitle>
       <StyledInnerSection>
         <Stack alignItems="center" justifyContent="center" space="M">
-          <Link href="/portfolio/003">
+          <Link href="/gallery/003">
             <Card>
               <Stack direction="row" alignItems="flex-start" space="M">
                 <StyledPortfolioImage>
                   <Image
                     src="/images/IMG_0008.png"
-                    alt="ポートフォリオサイトのトップ画像"
-                    width={183.6}
-                    height={130.56}
+                    alt="社内向けiPad用受付アプリ"
+                    width={1}
+                    height={1}
                     style={{
                       width: "100%",
                       height: "100%",
@@ -82,15 +82,15 @@ export default function GallerySection() {
               </Stack>
             </Card>
           </Link>
-          <Link href="/portfolio/002">
+          <Link href="/gallery/002">
             <Card>
               <Stack direction="row" alignItems="flex-start" space="M">
                 <StyledPortfolioImage>
                   <Image
                     src="/images/portfolio/all-landing.png"
-                    alt="ポートフォリオサイトのトップ画像"
-                    width={183.6}
-                    height={130.56}
+                    alt="LP制作/ロゴ・ブランディング企画/デザインルール策定"
+                    width={1}
+                    height={1}
                     style={{
                       width: "100%",
                       height: "100%",
@@ -109,15 +109,15 @@ export default function GallerySection() {
               </Stack>
             </Card>
           </Link>
-          <Link href="/portfolio/001">
+          <Link href="/gallery/001">
             <Card>
               <Stack direction="row" alignItems="flex-start" space="M">
                 <StyledPortfolioImage>
                   <Image
                     src="/images/top.png"
                     alt="ポートフォリオサイトのトップ画像"
-                    width={183.6}
-                    height={130.56}
+                    width={1}
+                    height={1}
                     style={{
                       width: "100%",
                       height: "100%",

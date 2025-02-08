@@ -10,7 +10,7 @@ const StyledInfraImage = styled.div`
   width: 100%;
 `;
 
-export default function SitePage() {
+export default function Page001() {
   return (
     <>
       <Stack justifyContent="center" alignItems="center" space="XXL">
