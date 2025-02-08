@@ -1,5 +1,5 @@
-import ContactPage from "@/page/contact/ContactPage";
+import ContactPageWrapper from "@/page/contact/ContactPageWrapper";
 
 export default function page() {
-  return <ContactPage />;
+  return <ContactPageWrapper />;
 }

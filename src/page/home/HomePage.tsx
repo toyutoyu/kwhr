@@ -6,6 +6,7 @@ import ProfileSection from "@/page/home/section/ProfileSection";
 import SkillSection from "@/page/home/section/SkillSection";
 import WorksSection from "@/page/home/section/WorksSection";
 import FirstViewSection from "./section/FirstViewSection";
+import GallerySection from "./section/GallerySection";
 
 export default function HomePage() {
   return (
@@ -15,10 +16,11 @@ export default function HomePage() {
         marginTop: "52px",
       }}
     >
-      <Stack space="X5L">
+      <Stack space="X3L">
         <FirstViewSection />
         <ProfileSection />
         <SkillSection />
+        <GallerySection />
         <WorksSection />
         <ContactSection />
       </Stack>

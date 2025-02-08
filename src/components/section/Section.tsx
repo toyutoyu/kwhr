@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const StyledSection = styled.section`
   width: 100%;
+  margin-bottom: 80px;
 `;
 
 type Props = {

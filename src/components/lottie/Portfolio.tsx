@@ -1,7 +1,7 @@
 "use client";
 import Lottie from "react-lottie";
+import styled from "styled-components";
 import portfolio from "../../../public/lottie/portfolio/data.json";
-import { CSSProperties } from "react";
 
 const defaultOption = {
   loop: false,
@@ -11,13 +11,11 @@ const defaultOption = {
   },
   animationData: portfolio,
 };
-
-const defaultStyle: CSSProperties = {
-  position: "relative",
-  top: "0px",
-  left: "0px",
-  width: "100%",
-};
+const LottieWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  /* height: 100%; */
+`;
 
 type Props = {
   isPause?: boolean;
@@ -25,11 +23,13 @@ type Props = {
 
 export default function Portfolio({ isPause = false }: Props) {
   return (
-    <Lottie
-      options={defaultOption}
-      isStopped={false}
-      isPaused={isPause}
-      style={defaultStyle}
-    />
+    <LottieWrapper>
+      <Lottie
+        options={defaultOption}
+        isStopped={false}
+        isPaused={isPause}
+        // style={defaultStyle}
+      />
+    </LottieWrapper>
   );
 }

@@ -1,29 +1,21 @@
 "use client";
 
 import Button from "@/components/button/Button";
+import { Page } from "@/components/container/Page";
+import Section from "@/components/section/Section";
 import SectionTitle from "@/components/section/SectionTitle";
 import Stack from "@/components/stack/Stack";
+import { DefineColor } from "@/theme/color";
 import { DefineFontSize } from "@/theme/fontSize";
 import { MediaSize } from "@/theme/mediaSize";
 import { DefineShadow } from "@/theme/shadow";
 import { DefineSpacing } from "@/theme/spacing";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
 
-const Page = styled.div`
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 100px - 52px);
-`;
-
 const PageInner = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   padding: 0 ${DefineSpacing.M};
 `;
 
@@ -47,6 +39,9 @@ const StyledInput = styled.input`
   width: 100%;
   padding: ${DefineSpacing.S};
   font-family: var(--font-notojp);
+  &::placeholder {
+    color: ${DefineColor.GRAY_500};
+  }
 `;
 
 const StyledTextArea = styled.textarea`
@@ -56,6 +51,9 @@ const StyledTextArea = styled.textarea`
   width: 100%;
   padding: ${DefineSpacing.S};
   font-family: var(--font-notojp);
+  &::placeholder {
+    color: ${DefineColor.GRAY_500};
+  }
 `;
 const StyledErrorMessage = styled.p`
   font-size: ${DefineFontSize.XXS};
@@ -79,6 +77,7 @@ const StyledText = styled.p`
 `;
 
 export default function ContactPage() {
+  const [isLoading, setIsLoading] = useState(false);
   const {
     control,
     register,
@@ -105,6 +104,7 @@ export default function ContactPage() {
       if (!executeRecaptcha) {
         return;
       }
+      setIsLoading(true);
       const recaptchaToken = await executeRecaptcha("Contact");
       if (recaptchaToken) {
         const res = await fetch(
@@ -119,13 +119,14 @@ export default function ContactPage() {
           if (json.success) handleSendContact(data);
         }
       }
+      setIsLoading(false);
     },
     [executeRecaptcha]
   );
 
   return (
     <Page>
-      <PageInner>
+      <Section id="contact">
         <Stack alignItems="center" justifyContent="center" space="L">
           <Stack alignItems="center" justifyContent="center">
             <SectionTitle>CONTACT</SectionTitle>
@@ -208,12 +209,14 @@ export default function ContactPage() {
                     </StyledErrorMessage>
                   )}
                 </Stack>
-                <Button type="submit">送信する</Button>
+                <Button type="submit" loading={isLoading}>
+                  送信する
+                </Button>
               </Stack>
             </form>
           </ContactCard>
         </Stack>
-      </PageInner>
+      </Section>
     </Page>
   );
 }
