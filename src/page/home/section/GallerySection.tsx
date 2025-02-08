@@ -8,7 +8,6 @@ import { DefineShadow } from "@/theme/shadow";
 import { DefineSpacing } from "@/theme/spacing";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import styled from "styled-components";
 import SectionTitle from "../../../components/section/SectionTitle";
 
@@ -51,7 +50,6 @@ const StyledPortfolioImage = styled.div`
 `;
 
 export default function GallerySection() {
-  const router = useRouter();
   return (
     <Section id="gallery">
       <SectionTitle odd>GALLERY</SectionTitle>

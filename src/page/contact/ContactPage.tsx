@@ -15,10 +15,6 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
 
-const PageInner = styled.div`
-  padding: 0 ${DefineSpacing.M};
-`;
-
 const ContactCard = styled.div`
   box-shadow: ${DefineShadow.LEVEL3};
   width: 100%;
