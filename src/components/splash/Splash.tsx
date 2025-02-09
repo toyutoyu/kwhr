@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
+import SquareLoader from "../animation/SquareLoader";
+import Stack from "../stack/Stack";
 
 const fadeOut = keyframes`
   0% {
@@ -42,24 +44,14 @@ const StyledSplash = styled.div<{ isComplete: boolean }>`
     `};
 `;
 
-// 進捗テキストのスタイル
-const StyledProgress = styled.p`
-  font-style: italic;
-  font-weight: 800;
-  color: #fff;
-  font-size: 40px;
-`;
-
 export default function Splash() {
   const progressRef = useRef(0);
-  const [progress, setProgress] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (progressRef.current < 100) {
         progressRef.current += 1;
-        setProgress(progressRef.current);
       } else {
         clearInterval(interval);
         setTimeout(() => setIsComplete(true), 500); // 少し待ってアニメーションを開始
@@ -71,7 +63,11 @@ export default function Splash() {
 
   return (
     <StyledSplash isComplete={isComplete}>
-      {!isComplete && <StyledProgress>{`${progress}%`}</StyledProgress>}
+      {!isComplete && (
+        <Stack alignItems="center" justifyContent="center">
+          <SquareLoader />
+        </Stack>
+      )}
     </StyledSplash>
   );
 }
