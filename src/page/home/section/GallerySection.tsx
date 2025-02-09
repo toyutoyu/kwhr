@@ -19,6 +19,13 @@ const Card = styled.div`
   max-width: 540px;
   min-height: 120px;
   border: 1px solid black;
+  transition: transform 150ms linear;
+
+  &:hover,
+  &:active {
+    transform: scale(0.95);
+    background-color: ${DefineColor.GRAY_100};
+  }
   @media screen and (min-width: ${MediaSize.S}) {
     min-height: 180px;
   }
