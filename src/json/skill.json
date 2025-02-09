@@ -30,7 +30,7 @@
       "logo": "/images/logo/html_logo.svg",
       "name": "HTML5",
       "rate": 4,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "日常業務で使用しており、Webページの構造設計やコンポーネント化に対応可能です。デザイン作成からプロトタイプ制作まで幅広く活用しています。"
     },
     {
       "logo": "/images/logo/css3_logo.svg",
@@ -48,7 +48,7 @@
       "logo": "/images/logo/ts_logo.svg",
       "name": "TypeScript",
       "rate": 3.5,
-      "description": "日常業務で使用しており、デザイン作成からプロトタイプ制作まで幅広く対応可能です。"
+      "description": "型安全なコードを意識し、保守性の高い開発を行います。日常業務で使用しており、ReactやNext.jsを活用した開発にも対応可能です。"
     },
     {
       "logo": "/images/logo/flutter_logo.svg",
@@ -94,12 +94,12 @@
       "logo": "/images/logo/nuxtjs_logo.svg",
       "name": "Nuxt.js",
       "rate": 3,
-      "description": "Vue.jsベースのフレームワークとして利用。SSRや静的サイト生成の経験があります。"
+      "description": "Vue.jsベースのフレームワークとして利用。SSRやWebアプリケーション作成の経験があります。"
     },
     {
       "logo": "/images/logo/laravel_logo.svg",
       "name": "Laravel",
-      "rate": 3,
+      "rate": 3.5,
       "description": "Laravelを用いたAPI開発やWebアプリケーションの実装経験があり、フロントエンドとの連携もスムーズに行えます。"
     },
     {

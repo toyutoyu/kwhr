@@ -96,7 +96,7 @@ export default function ProfileSection() {
             </Stack>
             <Stack alignItems="center" justifyContent="center">
               <ProfileName>川原 雄人</ProfileName>
-              <ProfileRomeName>Kawahara</ProfileRomeName>
+              <ProfileRomeName>Kawahara Yuto</ProfileRomeName>
             </Stack>
 
             <Table>
