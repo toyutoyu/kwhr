@@ -49,9 +49,9 @@ export default function Page003() {
                   />
                 </StyledImage>
                 <Description>
-                  ポートフォリオサイトです。現在のITスキルなどをまとめております。
+                  社内向けのiPad用受付アプリです。
                   <br />
-                  レスポンシブ対応済みで、PC/タブレット/スマートフォンからアクセス可能です。
+                  Flutter学習のために個人開発したものを社内向けに公開しました。
                 </Description>
               </Stack>
             </Stack>
