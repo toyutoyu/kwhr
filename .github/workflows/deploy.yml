@@ -34,6 +34,8 @@ jobs:
         run: npm install
 
       - name: Build and export Next.js app
+        env: 
+          NEXT_PUBLIC_RECAPTCHA_SITE_KEY: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_SITE_KEY }}
         run: npm run deploy
 
       - name: Configure AWS credentials with IAM Role
@@ -43,8 +45,6 @@ jobs:
           aws-region: ${{env.MY_AWS_REGION}}
 
       - name: Deploy to S3
-        env: 
-          NEXT_PUBLIC_RECAPTCHA_SITE_KEY: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_SITE_KEY }}
         run: |
             aws s3 sync ${SOURCE_DIR}/ s3://${{ env.AWS_S3_BUCKET }}/ --delete
             aws s3 website s3://${{env.AWS_S3_BUCKET}}/ --index-document index.html --error-document index.html
