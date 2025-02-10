@@ -4,7 +4,9 @@ import { GlobalStyles } from "@/components/container/style/Style";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import Splash from "@/components/splash/Splash";
-import { ReactNode } from "react";
+import { analytics } from "@/lib/firebase";
+import { logEvent } from "firebase/analytics";
+import { ReactNode, useEffect } from "react";
 import { Reset } from "styled-reset";
 
 type Props = {
@@ -12,6 +14,10 @@ type Props = {
 };
 
 export default function App({ children }: Props) {
+  useEffect(() => {
+    if (!analytics) return;
+    logEvent(analytics, "page_view");
+  }, []);
   return (
     <>
       <Reset />
