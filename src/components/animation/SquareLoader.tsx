@@ -42,7 +42,7 @@ const StyledSquareLoader = styled.div`
       transform: scale(var(--s, 1)) translate(20px, -20px);
     }
     60% {
-      transform: scale(var(--s, 1)) translate(0px, 0px);
+      transform: scale(var(--s, 1)) translate(20px, -20px);
     }
     90%,
     100% {
@@ -61,7 +61,7 @@ const StyledSquareLoader = styled.div`
       transform: scale(var(--s, 1)) translate(-20px, 20px);
     }
     60% {
-      transform: scale(var(--s, 1)) translate(0px, 0px);
+      transform: scale(var(--s, 1)) translate(-20px, 20px);
     }
     90%,
     100% {
@@ -80,7 +80,7 @@ const StyledSquareLoader = styled.div`
       transform: scale(var(--s, 1)) translate(-20px, -20px) rotate(0deg);
     }
     60% {
-      transform: scale(var(--s, 1)) translate(0, 0) rotate(180deg);
+      transform: scale(var(--s, 1)) translate(-20px, -20px) rotate(0deg);
     }
     90%,
     100% {
@@ -100,7 +100,7 @@ const StyledSquareLoader = styled.div`
       transform: scale(var(--s, 1)) translate(20px, 20px) rotate(-90deg);
     }
     60% {
-      transform: scale(var(--s, 1)) translate(0px, 0px) rotate(-90deg);
+      transform: scale(var(--s, 1)) translate(20px, 20px) rotate(-90deg);
     }
     90%,
     100% {
