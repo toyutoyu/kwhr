@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, forwardRef } from "react";
 import styled from "styled-components";
 
 const StyledSection = styled.section`
@@ -11,6 +11,15 @@ type Props = {
   children: ReactNode;
 };
 
-export default function Section({ id, children }: Props) {
-  return <StyledSection id={id}>{children}</StyledSection>;
-}
+const Section = forwardRef<HTMLElement, Props>(
+  ({ id, children }: Props, ref) => {
+    return (
+      <StyledSection id={id} ref={ref}>
+        {children}
+      </StyledSection>
+    );
+  }
+);
+
+export default Section;
+Section.displayName = "Section";

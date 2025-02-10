@@ -1,5 +1,5 @@
 {
-  "ui": [
+  "UI/UX": [
     {
       "logo": "/images/logo/figma_logo.svg",
       "name": "Figma",
@@ -25,7 +25,7 @@
       "description": "Figma導入前に使用していたツール。ワイヤーフレームやプロトタイプ作成の経験があります。"
     }
   ],
-  "frontend": [
+  "Frontend": [
     {
       "logo": "/images/logo/html_logo.svg",
       "name": "HTML5",
@@ -57,7 +57,7 @@
       "description": "モバイルアプリ開発の経験があります。Dart言語を使用し、クロスプラットフォームでの開発を行いました。"
     }
   ],
-  "backend": [
+  "Backend": [
     {
       "logo": "/images/logo/ruby_logo.svg",
       "name": "Ruby",
@@ -71,7 +71,7 @@
       "description": "Laravelを用いたAPI開発やWebアプリケーションの実装経験があり、フロントエンドとの連携もスムーズに行えます。"
     }
   ],
-  "framework": [
+  "Framework": [
     {
       "logo": "/images/logo/react_logo.svg",
       "name": "React",
@@ -109,7 +109,7 @@
       "description": "独学で学習を開始し、Ruby on Railsを用いた簡単なアプリケーション開発の経験があります。"
     }
   ],
-  "cloud": [
+  "Cloud": [
     {
       "logo": "/images/logo/aws_logo.svg",
       "name": "AWS",
@@ -123,7 +123,7 @@
       "description": "Firebase Remote Config, Authentication, Cloud Messaging を活用し、BaaSを用いたアプリ開発の経験があります。"
     }
   ],
-  "tool": [
+  "Tool": [
     {
       "logo": "/images/logo/github_logo.svg",
       "name": "Github",

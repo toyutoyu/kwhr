@@ -12,12 +12,18 @@ import Box from "./Box";
 type Props = {
   title: string;
   children: ReactNode;
+  isVisible?: boolean;
+  style?: React.CSSProperties;
 };
-const StyledBoxWrapper = styled.div`
+const StyledBoxWrapper = styled.div<{ isVisible: boolean }>`
+  position: relative;
   max-width: 800px;
   width: 100%;
   box-shadow: ${DefineShadow.LEVEL2};
   letter-spacing: 0.05em;
+  transition: transform 500ms ease;
+  transform: ${({ isVisible }) =>
+    isVisible ? "translateX(0)" : "translateX(-2000px)"};
 `;
 
 const StyledHead = styled.div`
@@ -39,11 +45,16 @@ const StyledTitle = styled.h3`
   }
 `;
 
-export default function AcordionBox({ title, children }: Props) {
+export default function AcordionBox({
+  title,
+  children,
+  isVisible = false,
+  style,
+}: Props) {
   const [open, setOpen] = useState(false);
 
   return (
-    <StyledBoxWrapper>
+    <StyledBoxWrapper isVisible={isVisible} style={style}>
       <StyledHead>
         <Stack
           direction="row"

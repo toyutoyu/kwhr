@@ -6,7 +6,7 @@ import ContactPage from "./ContactPage";
 export default function ContactPageWrapper() {
   return (
     <GoogleReCaptchaProvider
-      reCaptchaKey="6LeyUbUqAAAAALL4N3pQdHcD4CMHA8YXzmKvy7gb"
+      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ""}
       language="ja"
     >
       <ContactPage />
