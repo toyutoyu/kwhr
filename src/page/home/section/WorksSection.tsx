@@ -9,8 +9,9 @@ export default function WorksSection() {
   return (
     <Section id="works" ref={setLastElement}>
       <SectionTitle isVisible={isVisible}>WORKS</SectionTitle>
-      <StyledInnerSection></StyledInnerSection>
-      <WorksSectionContent />
+      <StyledInnerSection>
+        <WorksSectionContent />
+      </StyledInnerSection>
     </Section>
   );
 }
