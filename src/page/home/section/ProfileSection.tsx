@@ -1,6 +1,7 @@
 import Bubble from "@/components/bubble/Bubble";
 import Section from "@/components/section/Section";
 import Stack from "@/components/stack/Stack";
+import useScroll from "@/hook/useScroll";
 import { DefineFontSize } from "@/theme/fontSize";
 import { MediaSize } from "@/theme/mediaSize";
 import { DefineSpacing } from "@/theme/spacing";
@@ -74,9 +75,12 @@ const Td = styled.td`
 `;
 
 export default function ProfileSection() {
+  const { setLastElement, isVisible } = useScroll();
   return (
-    <Section id="profile">
-      <SectionTitle odd>PROFILE</SectionTitle>
+    <Section id="profile" ref={setLastElement}>
+      <SectionTitle odd isVisible={isVisible}>
+        PROFILE
+      </SectionTitle>
       <StyledProfile>
         <StyledProfileInner>
           <Stack alignItems="center" justifyContent="center" space="L">

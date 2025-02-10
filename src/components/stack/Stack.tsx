@@ -1,7 +1,7 @@
 "use client";
 
 import { DefineSpacing, SpacingTokens } from "@/theme/spacing";
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 
 type Props = {
@@ -52,25 +52,31 @@ const StyledStack = styled.div<{
   `}
 `;
 
-export default function Stack({
-  children,
-  space,
-  direction = "column",
-  alignItems,
-  justifyContent,
-  flexWrap = "nowrap",
-}: Props) {
-  return (
-    <>
+const Stack = forwardRef<HTMLDivElement, Props>(
+  (
+    {
+      children,
+      space,
+      direction = "column",
+      alignItems,
+      justifyContent,
+      flexWrap = "nowrap",
+    }: Props,
+    ref
+  ) => {
+    return (
       <StyledStack
         $space={space}
         $direction={direction}
         $alignItems={alignItems}
         $justifyContent={justifyContent}
         $flexWrap={flexWrap}
+        ref={ref}
       >
         {children}
       </StyledStack>
-    </>
-  );
-}
+    );
+  }
+);
+export default Stack;
+Stack.displayName = "Stack";

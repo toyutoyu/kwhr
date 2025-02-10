@@ -5,11 +5,15 @@ import styled from "styled-components";
 type Props = {
   odd?: boolean;
   children: ReactNode;
+  isVisible?: boolean;
 };
 
-const StyledSectionTitleWrapper = styled.div`
+const StyledSectionTitleWrapper = styled.div<{ isVisible: boolean }>`
   position: relative;
   margin-bottom: 24px;
+  transition: transform 0.5s ease;
+  transform: ${({ isVisible }) =>
+    isVisible ? "translateX(0)" : "translateX(-2000px)"};
 `;
 const StyledSectionTitle = styled.h1<{ $odd: boolean }>`
   position: relative;
@@ -46,10 +50,13 @@ const StyledSectionTitleShadow = styled.h1<{ $odd: boolean }>`
     top: 8px;
   }
 `;
-
-export default function SectionTitle({ odd = false, children }: Props) {
+export default function SectionTitle({
+  children,
+  odd = false,
+  isVisible = false,
+}: Props) {
   return (
-    <StyledSectionTitleWrapper>
+    <StyledSectionTitleWrapper isVisible={isVisible}>
       <StyledSectionTitle $odd={odd}>{children}</StyledSectionTitle>
       <StyledSectionTitleShadow $odd={odd}>{children}</StyledSectionTitleShadow>
     </StyledSectionTitleWrapper>

@@ -15,16 +15,16 @@ const StyledSquareLoader = styled.div`
     clip-path: polygon(0 0, 101% 0, 0 100%);
   }
   .span1 {
-    animation: l1 1.5s infinite;
+    animation: l1 2.5s infinite;
   }
   .span2 {
-    animation: l2 1.5s infinite;
+    animation: l2 2.5s infinite;
   }
   .span3 {
-    animation: l3 1.5s infinite;
+    animation: l3 2.5s infinite;
   }
   .span4 {
-    animation: l4 1.5s infinite;
+    animation: l4 2.5s infinite;
   }
 
   .loader::after {
@@ -32,30 +32,36 @@ const StyledSquareLoader = styled.div`
   }
   @keyframes l1 {
     0%,
-    10% {
-      transform: scale(var(--s, 1)) translate(0, 0) rotate(90deg);
+    6% {
+      transform: scale(var(--s, 1)) translate(0, 0) rotate(0deg);
     }
-    33% {
+    20% {
       transform: scale(var(--s, 1)) translate(20px, -20px) rotate(90deg);
     }
-    66% {
+    40% {
       transform: scale(var(--s, 1)) translate(20px, -20px);
+    }
+    60% {
+      transform: scale(var(--s, 1)) translate(0px, 0px);
     }
     90%,
     100% {
-      transform: scale(var(--s, 1)) translate(0px, 0px) rotate(90deg);
+      transform: scale(var(--s, 1)) translate(0px, 0px);
     }
   }
   @keyframes l2 {
     0%,
-    10% {
-      transform: scale(var(--s, 1)) translate(0, 0);
+    6% {
+      transform: scale(var(--s, 1)) translate(0, 0) rotate(0deg);
     }
-    33% {
+    20% {
+      transform: scale(var(--s, 1)) translate(-20px, 20px) rotate(90deg);
+    }
+    40% {
       transform: scale(var(--s, 1)) translate(-20px, 20px);
     }
-    66% {
-      transform: scale(var(--s, 1)) translate(-20px, 20px);
+    60% {
+      transform: scale(var(--s, 1)) translate(0px, 0px);
     }
     90%,
     100% {
@@ -64,31 +70,37 @@ const StyledSquareLoader = styled.div`
   }
   @keyframes l3 {
     0%,
-    10% {
-      transform: scale(var(--s, 1)) translate(0, 0) rotate(-90deg);
+    6% {
+      transform: scale(var(--s, 1)) translate(0, 0) rotate(0deg);
     }
-    33% {
+    20% {
+      transform: scale(var(--s, 1)) translate(-20px, -20px) rotate(90deg);
+    }
+    40% {
       transform: scale(var(--s, 1)) translate(-20px, -20px) rotate(0deg);
     }
-    66% {
-      transform: scale(var(--s, 1)) translate(-20px, -20px) rotate(0deg);
+    60% {
+      transform: scale(var(--s, 1)) translate(0, 0) rotate(180deg);
     }
     90%,
     100% {
-      transform: scale(var(--s, 1)) translate(0, 0) rotate(0deg);
+      transform: scale(var(--s, 1)) translate(0, 0) rotate(180deg);
     }
   }
 
   @keyframes l4 {
     0%,
-    10% {
+    6% {
       transform: scale(var(--s, 1)) translate(0, 0) rotate(-180deg);
     }
-    33% {
+    20% {
       transform: scale(var(--s, 1)) translate(20px, 20px) rotate(-180deg);
     }
-    66% {
+    40% {
       transform: scale(var(--s, 1)) translate(20px, 20px) rotate(-90deg);
+    }
+    60% {
+      transform: scale(var(--s, 1)) translate(0px, 0px) rotate(-90deg);
     }
     90%,
     100% {

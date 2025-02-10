@@ -1,6 +1,7 @@
 import Section from "@/components/section/Section";
 import { StyledInnerSection } from "@/components/section/style/Style";
 import Stack from "@/components/stack/Stack";
+import useScroll from "@/hook/useScroll";
 import { DefineColor } from "@/theme/color";
 import { DefineFontSize } from "@/theme/fontSize";
 import { MediaSize } from "@/theme/mediaSize";
@@ -57,9 +58,12 @@ const StyledPortfolioImage = styled.div`
 `;
 
 export default function GallerySection() {
+  const { setLastElement, isVisible } = useScroll();
   return (
-    <Section id="gallery">
-      <SectionTitle odd>GALLERY</SectionTitle>
+    <Section id="gallery" ref={setLastElement}>
+      <SectionTitle odd isVisible={isVisible}>
+        GALLERY
+      </SectionTitle>
       <StyledInnerSection>
         <Stack alignItems="center" justifyContent="center" space="M">
           <Link href="/gallery/003">

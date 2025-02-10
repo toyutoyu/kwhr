@@ -45,19 +45,23 @@ const StyledList = styled.li`
 const StyledAnchor = styled.a`
   transition: all 350ms ease-in-out;
   position: relative;
-  &::after {
+  &::before {
     content: "";
+    background: black;
+    width: 100%;
+    height: 2px;
     position: absolute;
-    bottom: 0;
     left: 0;
-    width: 0;
-    height: 2px; /* ボーダーの太さ */
-    background-color: #000; /* ボーダーの色 */
-    transition: width 0.3s ease;
+    bottom: 0;
+    margin: auto;
+    transform-origin: center top;
+    transform: scaleX(0);
+    transition: transform 0.3s;
   }
 
-  &:hover::after {
-    width: 100%;
+  &:hover::before {
+    transform-origin: center top;
+    transform: scaleX(1);
   }
 `;
 

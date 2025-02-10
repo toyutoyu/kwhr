@@ -2,16 +2,21 @@ import Button from "@/components/button/Button";
 import Section from "@/components/section/Section";
 import { StyledInnerSection } from "@/components/section/style/Style";
 import Stack from "@/components/stack/Stack";
+import useScroll from "@/hook/useScroll";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import SectionTitle from "../../../components/section/SectionTitle";
 
 export default function ContactSection() {
+  const { setLastElement, isVisible } = useScroll();
+
   const router = useRouter();
   return (
-    <Section id="contact">
-      <SectionTitle odd>CONTACT</SectionTitle>
+    <Section id="contact" ref={setLastElement}>
+      <SectionTitle odd isVisible={isVisible}>
+        CONTACT
+      </SectionTitle>
       <StyledInnerSection>
         <Stack alignItems="center" justifyContent="center">
           <Button onClick={() => router.push("/contact")}>お問い合わせ</Button>

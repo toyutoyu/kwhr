@@ -4,7 +4,7 @@ import { MediaSize } from "@/theme/mediaSize";
 import { DefineShadow } from "@/theme/shadow";
 import { DefineSpacing } from "@/theme/spacing";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import AcordionMenu from "../menu/AcordionMenu";
 import Rate from "../rating/Rate";
@@ -21,11 +21,16 @@ type Content = {
 type Props = {
   title: string;
   contents: Array<Content>;
+  style?: React.CSSProperties;
+  isVisible: boolean;
 };
-const StyledBoxWrapper = styled.div`
+const StyledBoxWrapper = styled.div<{ isVisible: boolean }>`
   max-width: 800px;
   width: 100%;
   box-shadow: ${DefineShadow.LEVEL4};
+  transition: transform 500ms ease;
+  transform: ${({ isVisible }) =>
+    isVisible ? "translateX(0)" : "translateX(-2000px)"};
 `;
 
 const StyledHead = styled.div`
@@ -86,10 +91,10 @@ const StyledImage = styled.div`
   }
 `;
 
-export default function SkillBox({ title, contents }: Props) {
+export default function SkillBox({ title, contents, style, isVisible }: Props) {
   const [open, setOpen] = useState(false);
   return (
-    <StyledBoxWrapper>
+    <StyledBoxWrapper style={style} isVisible={isVisible}>
       <StyledHead>
         <Stack
           direction="row"
