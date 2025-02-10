@@ -50,7 +50,7 @@ export default function Splash() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (progressRef.current < 1) {
+      if (progressRef.current < 250) {
         progressRef.current += 1;
       } else {
         clearInterval(interval);
