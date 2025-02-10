@@ -42,7 +42,7 @@ const StyledInput = styled.input`
 
 const StyledTextArea = styled.textarea`
   border: 1px solid black;
-  min-height: 240px;
+  min-height: 200px;
   height: 240px;
   width: 100%;
   padding: ${DefineSpacing.S};
@@ -125,7 +125,7 @@ export default function ContactPage() {
       <Section id="contact">
         <Stack alignItems="center" justifyContent="center" space="L">
           <Stack alignItems="center" justifyContent="center">
-            <SectionTitle>CONTACT</SectionTitle>
+            <SectionTitle isVisible>CONTACT</SectionTitle>
             <StyledText>
               ご興味を持っていただきまして、誠にありがとうございます。
               <br />
