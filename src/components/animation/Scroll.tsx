@@ -6,6 +6,8 @@ const StyledScrollWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   animation: bounce 1s infinite;
+  position: relative;
+  bottom: 20px;
 
   @keyframes bounce {
     0%,
