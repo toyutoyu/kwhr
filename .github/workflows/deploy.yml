@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main  # デプロイをトリガーするブランチ
-
 env:
   MY_AWS_REGION: 'ap-northeast-1'
   MY_CLOUDFRONT_DISTRIBUTION_ID: 'E3VXZF708JLL8T'
