@@ -130,6 +130,73 @@ export default function Page002() {
                 />
               </StyledImage>
             </Stack>
+
+            <Stack space="L" justifyContent="center" alignItems="center">
+              <Stack space="M" justifyContent="center" alignItems="center">
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="center"
+                  space="XXS"
+                >
+                  <Square>
+                    <WhiteTitle>オ</WhiteTitle>
+                  </Square>
+                  <Title>リジナルアイコン作成</Title>
+                </Stack>
+                <Description>
+                  作成のルールがバラバラで一貫性が担保されていなかった。
+                  <br />
+                  また目指したい世界観を表現するクリエイティブとしてもデザインが古くなっていたため
+                  為、リニューアルを行いました。
+                </Description>
+              </Stack>
+
+              <StyledImage>
+                <Image
+                  src="/images/original_icon.png"
+                  alt="オリジナルアイコン作成"
+                  width={1}
+                  height={1}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                  }}
+                />
+              </StyledImage>
+            </Stack>
+
+            <Stack space="L" justifyContent="center" alignItems="center">
+              <Stack space="M" justifyContent="center" alignItems="center">
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="center"
+                  space="XXS"
+                >
+                  <Square>
+                    <WhiteTitle>オ</WhiteTitle>
+                  </Square>
+                  <Title>リジナルイラスト作成</Title>
+                </Stack>
+                <Description>
+                  タクシー業界ということもあり車体のデザインが多めです。
+                </Description>
+              </Stack>
+
+              <StyledImage>
+                <Image
+                  src="/images/illust_work.png"
+                  alt="イラスト制作"
+                  width={1}
+                  height={1}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                  }}
+                />
+              </StyledImage>
+            </Stack>
           </Stack>
         </Page>
       </Section>
