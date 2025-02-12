@@ -10,7 +10,7 @@ import { DefineFontSize } from "@/theme/fontSize";
 import { MediaSize } from "@/theme/mediaSize";
 import { DefineShadow } from "@/theme/shadow";
 import { DefineSpacing } from "@/theme/spacing";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
@@ -73,12 +73,15 @@ const StyledText = styled.p`
 `;
 
 export default function ContactPage() {
+  const [buttonText, setButtonText] = useState("送信する");
+  const [isSendSuccessed, setIsSendSuccessed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const {
     control,
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm<ContactForm>({
     mode: "onBlur",
     defaultValues: { name: "", email: "", inquiry: "" },
@@ -112,13 +115,28 @@ export default function ContactPage() {
         );
         if (res) {
           const json = await res.json();
-          if (json.success) handleSendContact(data);
+          if (json.success) {
+            await handleSendContact(data);
+            setIsSendSuccessed(true);
+          }
         }
       }
       setIsLoading(false);
     },
     [executeRecaptcha]
   );
+  useEffect(() => {
+    if (!isSendSuccessed) return;
+
+    setButtonText("送信完了!");
+    setValue("name", "");
+    setValue("email", "");
+    setValue("inquiry", "");
+    setTimeout(() => {
+      setButtonText("送信する");
+      setIsSendSuccessed(false);
+    }, 2000);
+  }, [isSendSuccessed]);
 
   return (
     <Page>
@@ -206,7 +224,7 @@ export default function ContactPage() {
                   )}
                 </Stack>
                 <Button type="submit" loading={isLoading}>
-                  送信する
+                  {buttonText}
                 </Button>
               </Stack>
             </form>
