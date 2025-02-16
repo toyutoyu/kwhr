@@ -66,6 +66,31 @@ export default function GallerySection() {
       </SectionTitle>
       <StyledInnerSection>
         <Stack alignItems="center" justifyContent="center" space="M">
+          <Link href="/gallery/004">
+            <Card>
+              <Stack direction="row" alignItems="flex-start" space="M">
+                <StyledPortfolioImage>
+                  <Image
+                    src="/images/IMG_0008.png"
+                    alt="社内向けiPad用受付アプリ"
+                    width={1}
+                    height={1}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+                </StyledPortfolioImage>
+
+                <Stack space="S">
+                  <Title>クライアントワーク/個人制作</Title>
+                  <Description>
+                    立ち絵イラストをクライアントから受注して制作したものや個人制作したものをまとめています。
+                  </Description>
+                </Stack>
+              </Stack>
+            </Card>
+          </Link>
           <Link href="/gallery/003">
             <Card>
               <Stack direction="row" alignItems="flex-start" space="M">
