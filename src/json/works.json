@@ -72,5 +72,19 @@
       "environment": "Laravel, Figma, Next.js",
       "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
     }
+  ],
+  "2025": [
+    {
+      "projectName": "Noruuu-Ride(LINEミニアプリ)",
+      "overview": "高知市内でカンタン＆スムーズにタクシーに乗れる配車アプリ「こちタク」の配信を開始。\nそれに合わせてLINEミニアプリのデザインアップデートと新機能を追加",
+      "environment": "LINE, Laravel, Figma, Next.js",
+      "inCharge": "PG(バックエンド・フロントエンド)"
+    },
+    {
+      "projectName": "Noruuu-Sharing(オンデマンドMaaSアプリ)",
+      "overview": "多言語対応（英語）",
+      "environment": "Laravel, Figma, Next.js",
+      "inCharge": "PG(バックエンド・フロントエンド)"
+    }
   ]
 }
