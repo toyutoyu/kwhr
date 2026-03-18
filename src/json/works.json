@@ -85,6 +85,32 @@
       "overview": "多言語対応（英語）",
       "environment": "Laravel, Figma, Next.js",
       "inCharge": "PG(バックエンド・フロントエンド)"
+    },
+    {
+      "projectName": "大型施策「マルコとマルオの10日間」LPデザイン刷新",
+      "overview": "大型施策「マルコとマルオの10日間」において、訴求力とブランド一貫性を高めるためのデザイン刷新を実施。",
+      "environment": "Figma, Adobe Experience Manager",
+      "inCharge": "運用設計/UX設計/UIデザイン/フロント実装/API連携調整"
+    },
+    {
+      "projectName": "大型施策「エポス プラチナ・ゴールドカードご優待」LPデザイン刷新",
+      "overview": "大型施策「エポス プラチナ・ゴールドカードご優待」において、特典訴求を最大化するためのLPデザイン刷新を実施。",
+      "environment": "Figma, Adobe Experience Manager",
+      "inCharge": "運用設計/UX設計/UIデザイン/フロント実装/API連携調整"
+    }
+  ],
+  "2026": [
+    {
+      "projectName": "Noruuu-Sharing(オンデマンドMaaSアプリ) / 自動チャットボット機能実装",
+      "overview": "ユーザーとドライバーが乗車前に情報共有し、合流精度と体験を改善したチャットボット機能の実装",
+      "environment": "Laravel, Figma, Next.js",
+      "inCharge": "要件定義/UX設計/UIデザイン/フロント実装/API連携調整"
+    },
+    {
+      "projectName": "Noruuu-Sharing(オンデマンドMaaSアプリ) / 通話機能実装",
+      "overview": "ユーザーとドライバーが直接通話できる機能を設計・実装し、乗車前のコミュニケーションを即時に行える環境を構築。",
+      "environment": "Amazon Chime, Laravel, Figma, Next.js",
+      "inCharge": "要件定義/UX設計/UIデザイン/バックエンド実装/フロント実装/API連携調整"
     }
   ]
 }
