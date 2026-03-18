@@ -31,6 +31,8 @@ const StyledHead = styled.div`
   width: 100%;
   padding: ${DefineSpacing.XXS} ${DefineSpacing.S};
   border: 1px solid black;
+  cursor: pointer;
+  user-select: none;
 
   @media screen and (min-width: ${MediaSize.S}) {
     padding: ${DefineSpacing.L} ${DefineSpacing.M};
@@ -55,14 +57,16 @@ export default function AcordionBox({
 
   return (
     <StyledBoxWrapper isVisible={isVisible} style={style}>
-      <StyledHead>
+      <StyledHead onClick={() => setOpen(!open)}>
         <Stack
           direction="row"
           alignItems="center"
           justifyContent="space-between"
         >
           <StyledTitle>{title}</StyledTitle>
-          <AcordionMenu open={open} onOpen={() => setOpen(!open)} />
+          <span onClick={(e) => e.stopPropagation()}>
+            <AcordionMenu open={open} onOpen={() => setOpen(!open)} />
+          </span>
         </Stack>
       </StyledHead>
       <Box open={open}>{children}</Box>

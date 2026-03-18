@@ -37,6 +37,8 @@ const StyledHead = styled.div`
   background-color: ${DefineColor.black};
   width: 100%;
   padding: ${DefineSpacing.XXS} ${DefineSpacing.S};
+  cursor: pointer;
+  user-select: none;
 
   @media screen and (min-width: ${MediaSize.S}) {
     padding: ${DefineSpacing.L} ${DefineSpacing.M};
@@ -95,18 +97,20 @@ export default function SkillBox({ title, contents, style, isVisible }: Props) {
   const [open, setOpen] = useState(false);
   return (
     <StyledBoxWrapper style={style} isVisible={isVisible}>
-      <StyledHead>
+      <StyledHead onClick={() => setOpen(!open)}>
         <Stack
           direction="row"
           alignItems="center"
           justifyContent="space-between"
         >
           <StyledTitle>{title}</StyledTitle>
-          <AcordionMenu
-            open={open}
-            onOpen={() => setOpen(!open)}
-            isBlack={false}
-          />{" "}
+          <span onClick={(e) => e.stopPropagation()}>
+            <AcordionMenu
+              open={open}
+              onOpen={() => setOpen(!open)}
+              isBlack={false}
+            />
+          </span>
         </Stack>
       </StyledHead>
       <Box open={open}>

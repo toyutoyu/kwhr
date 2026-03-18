@@ -21,7 +21,7 @@ const transparencyScale = {
 
 export const DefineColor = {
   background: "#dfdfdf",
-  black: "#000000",
+  black: "#333333",
   white: "#ffffff",
   blue: "#3420FA",
   yellow: "#B2FF00",

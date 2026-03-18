@@ -22,6 +22,7 @@ const Td = styled.td`
   border: 1px solid black;
   font-family: var(--font-notojp);
   font-size: ${DefineFontSize.XS};
+  line-height: 1.5rem;
   @media screen and (min-width: ${MediaSize.S}) {
     font-size: ${DefineFontSize.M};
   }
