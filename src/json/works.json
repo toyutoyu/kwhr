@@ -2,115 +2,115 @@
   "2017 - 2021": [
     {
       "projectName": "室外機の派生開発",
-      "overview": "既存プログラムへ新機能を追加・既存機能をアップグレード。主に仕様変更依頼対応の上流～下流工程を担当",
+      "overview": "既存製品の制御プログラムに対する機能追加・改修を担当。仕様変更対応を中心に、安定性を担保しながら継続的な機能拡張を実現。",
       "environment": "C言語, Visual Studio",
-      "inCharge": "基本設計、詳細設計、PG、テスト"
+      "inCharge": "基本設計/詳細設計/PG/テスト"
     },
     {
       "projectName": "製品販促用デモアプリケーション開発",
-      "overview": "派遣先の立花エレテックで、営業部と協働してC#による商品販促用アプリケーション開発を担当",
+      "overview": "営業部門と連携し、製品理解を促進するデモアプリケーションを開発。UI設計から実装まで一貫して担当し、営業現場での提案力向上に貢献。",
       "environment": "C#, Visual Studio, Figma",
-      "inCharge": "基本設計、詳細設計、デザイン、PG、テスト"
+      "inCharge": "基本設計/詳細設計/デザイン/PG/テスト"
     }
   ],
   "2022": [
     {
       "projectName": "ランディングページ作成6本",
-      "overview": "新規サービス告知のためのランディングページを開発",
-      "environment": "Figma, Vue.js, tailwindcss",
-      "inCharge": "デザイン、PG(フロントエンド)"
+      "overview": "新規サービスの認知拡大を目的としたLPを複数制作。デザインから実装まで一貫して担当し、短期間での量産と品質担保を両立。",
+      "environment": "Figma, Vue.js, Tailwind CSS",
+      "inCharge": "デザイン/フロントエンド実装"
     },
     {
       "projectName": "Noruuu-Callcenter",
-      "overview": "コールセンター向けの既存アプリケーションを機能追加・改修し、業務効率の向上",
-      "environment": "Laravel, Figma, Vue.js, tailwindcss",
-      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+      "overview": "コールセンター業務効率化のための既存システム改修を担当。業務フロー改善とUI最適化により、オペレーション負荷の軽減に寄与。",
+      "environment": "Laravel, Figma, Vue.js, Tailwind CSS",
+      "inCharge": "基本設計/詳細設計/デザイン/バックエンド実装/フロントエンド実装"
     },
     {
       "projectName": "Noruuu-Delivery",
-      "overview": "既存の店舗向けWebアプリケーションをVue.jsからReactへのコンバートおよびリファクタリング",
+      "overview": "店舗向けWebアプリケーションのReactへのリプレイスを担当。可読性・保守性を向上させるリファクタリングを実施し、開発効率の改善に貢献。",
       "environment": "Laravel, Figma, React",
-      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+      "inCharge": "基本設計/詳細設計/デザイン/バックエンド実装/フロントエンド実装"
     }
   ],
   "2023": [
     {
       "projectName": "社内向けiPad用受付アプリ",
-      "overview": "社内向けのiPad用受付アプリのデザイン・開発",
+      "overview": "受付業務の効率化を目的としたiPadアプリを新規開発。直感的なUI設計により、非ITユーザーでも扱いやすい体験を実現。",
       "environment": "Figma, Flutter, Slack",
-      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+      "inCharge": "基本設計/詳細設計/デザイン/バックエンド実装/フロントエンド実装"
     },
     {
       "projectName": "Noruuu-Ride",
-      "overview": "ToB向けのホワイトレーベルな配車アプリケーションの新規開発・リリース",
+      "overview": "ホワイトレーベル型の配車アプリを新規開発・リリース。多様な事業者への展開を前提とした拡張性の高い設計を実現。",
       "environment": "Laravel, Figma, Flutter",
-      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+      "inCharge": "基本設計/詳細設計/デザイン/バックエンド実装/フロントエンド実装"
     },
     {
       "projectName": "Noruuu-Ride\n(しもまちベイビータクシー)",
-      "overview": "下関市からの受託開発で、Noruuu-Rideを利用した妊婦専用のタクシー配車アプリのデザイン・開発",
+      "overview": "自治体向け妊婦専用配車サービスの開発を担当。ユーザー特性に配慮したUX設計により、安心して利用できる体験を提供。",
       "environment": "Laravel, Figma, Flutter, Vue.js",
-      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+      "inCharge": "基本設計/詳細設計/デザイン/バックエンド実装/フロントエンド実装"
     },
     {
       "projectName": "Noruuu-Enterprise",
-      "overview": "ToB向けクーポンの発行・管理・利用状況分析を一元管理するシステムを新規開発",
+      "overview": "クーポン発行・管理・分析を一元化するBtoBシステムを新規開発。マーケティング施策の運用効率向上とデータ活用を支援。",
       "environment": "Laravel, Figma, React",
-      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+      "inCharge": "基本設計/詳細設計/デザイン/バックエンド実装/フロントエンド実装"
     }
   ],
   "2024": [
     {
       "projectName": "Noruuu-Ride(LINEミニアプリ)",
-      "overview": "ToB向けの日本版ライドシェアに対応した新サービスをLINEミニアプリで提供",
+      "overview": "日本版ライドシェアに対応した配車サービスをLINEミニアプリとして提供。ユーザー接点の拡張と利用ハードルの低減を実現。",
       "environment": "LINE, Laravel, Figma, Next.js",
-      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+      "inCharge": "基本設計/詳細設計/デザイン/バックエンド実装/フロントエンド実装"
     },
     {
       "projectName": "Noruuu-Sharing(オンデマンドMaaSアプリ)",
-      "overview": "ユーザーが必要なタイミングで車両を予約・利用できる乗合サービスを実現し、SaaSとして展開可能な仕組みを構築",
+      "overview": "乗合型オンデマンド配車サービスをSaaSとして展開可能な形で構築。予約〜乗車までの一連の体験設計を担い、サービス基盤を確立。",
       "environment": "Laravel, Figma, Next.js",
-      "inCharge": "基本設計、詳細設計、デザイン、PG(バックエンド・フロントエンド)"
+      "inCharge": "基本設計/詳細設計/デザイン/バックエンド実装/フロントエンド実装"
     }
   ],
   "2025": [
     {
       "projectName": "Noruuu-Ride(LINEミニアプリ)",
-      "overview": "高知市内でカンタン＆スムーズにタクシーに乗れる配車アプリ「こちタク」の配信を開始。\nそれに合わせてLINEミニアプリのデザインアップデートと新機能を追加",
+      "overview": "配車アプリ「こちタク」のリリースに伴い、UI改善および機能追加を実施。ユーザビリティ向上と継続利用促進に貢献。",
       "environment": "LINE, Laravel, Figma, Next.js",
-      "inCharge": "PG(バックエンド・フロントエンド)"
+      "inCharge": "バックエンド実装/フロントエンド実装"
     },
     {
       "projectName": "Noruuu-Sharing(オンデマンドMaaSアプリ)",
-      "overview": "多言語対応（英語）",
+      "overview": "多言語対応（英語）を実装し、外国人ユーザーへの対応を強化。サービスの利用可能範囲を拡張。",
       "environment": "Laravel, Figma, Next.js",
-      "inCharge": "PG(バックエンド・フロントエンド)"
+      "inCharge": "バックエンド実装/フロントエンド実装"
     },
     {
       "projectName": "大型施策「マルコとマルオの10日間」LPデザイン刷新",
-      "overview": "大型施策「マルコとマルオの10日間」において、訴求力とブランド一貫性を高めるためのデザイン刷新を実施。",
+      "overview": "大型販促施策におけるLPの情報設計とビジュアルを再構築。訴求の優先順位整理とブランドトーンの統一により、ユーザーの理解促進と行動喚起を改善。",
       "environment": "Figma, Adobe Experience Manager",
-      "inCharge": "運用設計/UX設計/UIデザイン/フロント実装/API連携調整"
+      "inCharge": "運用設計/UX設計/UIデザイン/フロントエンド実装/API連携調整"
     },
     {
       "projectName": "大型施策「エポス プラチナ・ゴールドカードご優待」LPデザイン刷新",
-      "overview": "大型施策「エポス プラチナ・ゴールドカードご優待」において、特典訴求を最大化するためのLPデザイン刷新を実施。",
+      "overview": "複雑な特典情報を整理し、ファーストビューで価値が伝わる構成へ改善。数値訴求と視認性の最適化により、理解度と行動率の向上に寄与。",
       "environment": "Figma, Adobe Experience Manager",
-      "inCharge": "運用設計/UX設計/UIデザイン/フロント実装/API連携調整"
+      "inCharge": "運用設計/UX設計/UIデザイン/フロントエンド実装/API連携調整"
     }
   ],
   "2026": [
     {
       "projectName": "Noruuu-Sharing(オンデマンドMaaSアプリ) / 自動チャットボット機能実装",
-      "overview": "ユーザーとドライバーが乗車前に情報共有し、合流精度と体験を改善したチャットボット機能の実装",
+      "overview": "乗車前の情報共有を最適化するチャットボット機能を実装。目印・位置・準備状況の事前収集とリアルタイム共有により、合流精度と体験品質を向上。",
       "environment": "Laravel, Figma, Next.js",
-      "inCharge": "要件定義/UX設計/UIデザイン/フロント実装/API連携調整"
+      "inCharge": "要件定義/UX設計/UIデザイン/フロントエンド実装/API連携調整"
     },
     {
       "projectName": "Noruuu-Sharing(オンデマンドMaaSアプリ) / 通話機能実装",
-      "overview": "ユーザーとドライバーが直接通話できる機能を設計・実装し、乗車前のコミュニケーションを即時に行える環境を構築。",
+      "overview": "ユーザーとドライバーが即時にコミュニケーションできる通話機能を実装。状況に応じた連絡手段を提供し、乗車前の不確実性を低減。",
       "environment": "Amazon Chime, Laravel, Figma, Next.js",
-      "inCharge": "要件定義/UX設計/UIデザイン/バックエンド実装/フロント実装/API連携調整"
+      "inCharge": "要件定義/UX設計/UIデザイン/バックエンド実装/フロントエンド実装/API連携調整"
     }
   ]
 }
