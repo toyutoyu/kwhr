@@ -1,6 +1,6 @@
 import { DefineColor } from "@/theme/color";
 import { DefineSpacing } from "@/theme/spacing";
-import { ReactNode, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 const StyledBox = styled.div<{ maxHeight: number; padding: string }>`
@@ -26,20 +26,16 @@ export default function Box({ open, children }: Props) {
   const [maxHeight, setMaxHeight] = useState(0);
   const [padding, setPadding] = useState("0");
 
+  const paddingPx = parseInt(DefineSpacing.M) * 2;
+
   useEffect(() => {
-    if (open) {
+    if (open && contentRef.current) {
       setPadding(DefineSpacing.M);
+      setMaxHeight(contentRef.current.scrollHeight + paddingPx);
     } else {
       setMaxHeight(0);
     }
   }, [open]);
-
-  // paddingが適用されたDOMを基に高さを測定する
-  useLayoutEffect(() => {
-    if (open && contentRef.current) {
-      setMaxHeight(contentRef.current.scrollHeight);
-    }
-  }, [padding, open]);
 
   return (
     <StyledBox
