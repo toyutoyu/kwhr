@@ -30,7 +30,7 @@ const StyledHead = styled.div`
   background-color: ${DefineColor.white};
   width: 100%;
   padding: ${DefineSpacing.XXS} ${DefineSpacing.S};
-  border: 1px solid black;
+  border: 1px solid ${DefineColor.black};
   cursor: pointer;
   user-select: none;
 

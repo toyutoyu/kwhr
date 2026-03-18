@@ -1,3 +1,4 @@
+import { DefineColor } from "@/theme/color";
 import { DefineFontSize } from "@/theme/fontSize";
 import { MediaSize } from "@/theme/mediaSize";
 import { ReactNode } from "react";
@@ -12,6 +13,7 @@ const StyledText = styled.p`
   letter-spacing: 1.2;
   line-height: 1.2;
   text-align: center;
+  color: ${DefineColor.black};
   @media screen and (min-width: ${MediaSize.S}) {
     font-size: ${DefineFontSize.M};
   }

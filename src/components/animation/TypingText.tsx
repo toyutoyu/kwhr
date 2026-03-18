@@ -1,3 +1,4 @@
+import { DefineColor } from "@/theme/color";
 import { MediaSize } from "@/theme/mediaSize";
 import styled, { keyframes } from "styled-components";
 const typing = keyframes`
@@ -19,20 +20,21 @@ const StyledTypingText = styled.p<{ textLength: number; textSizeRem: number }>`
     return `calc(${textLength}ch + ${letterSpacingTotal}rem)`;
   }};
 
-  border-right: 2px solid #000;
+  border-right: 2px solid ${DefineColor.black};
   overflow: hidden;
   white-space: nowrap;
   font-size: ${({ textSizeRem }) => `${textSizeRem / 2.5}rem`};
   line-height: 1;
   letter-spacing: ${letterSpacingNum / 2}rem;
   font-weight: 700;
-  animation: ${typing} 3s steps(${({ textLength }) => textLength}),
+  animation:
+    ${typing} 3s steps(${({ textLength }) => textLength}),
     ${blink} 0.5s step-end infinite alternate; /*アニメーション関連*/
   animation-delay: 2.5s;
 
   @media screen and (min-width: ${MediaSize.S}) {
     font-size: ${({ textSizeRem }) => `${textSizeRem}rem`};
-    border-right: 4px solid #000;
+    border-right: 4px solid ${DefineColor.black};
     letter-spacing: ${letterSpacingNum}rem;
     width: ${({ textLength }) => {
       const letterSpacingTotal = (textLength - 1) * letterSpacingNum;

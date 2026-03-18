@@ -1,3 +1,4 @@
+import { DefineColor } from "@/theme/color";
 import { DefineFontSize } from "@/theme/fontSize";
 import { MediaSize } from "@/theme/mediaSize";
 import { DefineSpacing } from "@/theme/spacing";
@@ -6,7 +7,7 @@ import styled from "styled-components";
 const Th = styled.th`
   width: 20%;
   padding: ${DefineSpacing.S} ${DefineSpacing.XS};
-  background-color: black;
+  background-color: ${DefineColor.black};
   color: white;
   white-space: nowrap;
   border: 1px solid black;

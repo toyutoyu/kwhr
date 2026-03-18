@@ -1,5 +1,6 @@
 "use client";
 
+import { DefineColor } from "@/theme/color";
 import { useEffect, useRef, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import SquareLoader from "../animation/SquareLoader";
@@ -33,7 +34,7 @@ const StyledSplash = styled.div<{ isComplete: boolean }>`
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background-color: #000;
+  background-color: ${DefineColor.black};
   display: flex;
   justify-content: center;
   align-items: center;

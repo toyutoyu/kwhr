@@ -3,50 +3,45 @@ import { DefineSpacing } from "@/theme/spacing";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-const StyledBox = styled.div<{ maxHeight: number; padding: string }>`
+const StyledOuter = styled.div<{ maxHeight: number }>`
+  width: 100%;
+  overflow: hidden;
+  max-height: ${({ maxHeight }) => `${maxHeight}px`};
+  transition: max-height 300ms ease-in-out;
+  border-bottom: ${({ maxHeight }) => (maxHeight > 0 ? "1px solid #333" : "0")};
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+`;
+
+const StyledInner = styled.div`
   background-color: ${DefineColor.white};
-  padding: ${({ padding }) => padding};
+  padding: ${DefineSpacing.M};
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  border-bottom: ${({ maxHeight }) => (maxHeight > 0 ? "1px solid black" : "0")};
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  overflow: hidden;
-  max-height: ${({ maxHeight }) => `${maxHeight}px`};
-  transition: max-height 300ms ease-in-out;
 `;
+
 type Props = {
   open: boolean;
   children: ReactNode;
 };
-export default function Box({ open, children }: Props) {
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [maxHeight, setMaxHeight] = useState(0);
-  const [padding, setPadding] = useState("0");
 
-  const paddingPx = parseInt(DefineSpacing.M) * 2;
+export default function Box({ open, children }: Props) {
+  const innerRef = useRef<HTMLDivElement>(null);
+  const [maxHeight, setMaxHeight] = useState(0);
 
   useEffect(() => {
-    if (open && contentRef.current) {
-      setPadding(DefineSpacing.M);
-      setMaxHeight(contentRef.current.scrollHeight + paddingPx);
+    if (open && innerRef.current) {
+      setMaxHeight(innerRef.current.scrollHeight);
     } else {
       setMaxHeight(0);
     }
   }, [open]);
 
   return (
-    <StyledBox
-      ref={contentRef}
-      maxHeight={maxHeight}
-      padding={padding}
-      onTransitionEnd={() => {
-        if (!open) setPadding("0");
-      }}
-    >
-      {children}
-    </StyledBox>
+    <StyledOuter maxHeight={maxHeight}>
+      <StyledInner ref={innerRef}>{children}</StyledInner>
+    </StyledOuter>
   );
 }

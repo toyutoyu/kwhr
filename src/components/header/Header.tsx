@@ -15,7 +15,7 @@ const StyledHeader = styled.header`
   padding: ${DefineSpacing.XS} ${DefineSpacing.S};
   background-color: white;
   height: 44px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #333;
   @media screen and (min-width: ${MediaSize.S}) {
     padding: ${DefineSpacing.S} ${DefineSpacing.M};
     height: 52px;
@@ -47,7 +47,7 @@ const StyledAnchor = styled.a`
   position: relative;
   &::before {
     content: "";
-    background: black;
+    background: #333;
     width: 100%;
     height: 2px;
     position: absolute;
@@ -103,7 +103,7 @@ const headerItems = [
 
 const SiteTitle = styled.h1`
   font-size: 22px;
-  color: black;
+  color: #333;
   font-weight: 700;
 `;
 export default function Header() {

@@ -17,7 +17,7 @@ export const Menu = styled.button<{ open: boolean; isBlack: boolean }>`
     width: 100%;
     height: 2px; /* 線の太さ */
 
-    background: ${({ isBlack }) => (isBlack ? "black" : "white")};
+    background: ${({ isBlack }) => (isBlack ? "#333" : "white")};
     transition: all 0.3s ease-in-out;
   }
 
