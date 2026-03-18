@@ -131,6 +131,18 @@
       "description": "チーム開発でのGit管理に対応。ブランチ戦略やコードレビューの経験があります。"
     },
     {
+      "logo": "/images/logo/github-copilot-icon.svg",
+      "name": "Github Copilot",
+      "rate": 3,
+      "description": "コード補完やテストコード生成に活用し、実装スピードと品質の向上に寄与。リファクタリングや定型処理の効率化にも活用しています。"
+    },
+    {
+      "logo": "/images/logo/claudecode_logo.svg",
+      "name": "Claude Code",
+      "rate": 3,
+      "description": "設計補助やコード生成、既存コードの解析に活用。要件から実装までの思考整理や、複雑なロジックの分解・最適化に利用しています。"
+    },
+    {
       "logo": "/images/logo/postman_logo.svg",
       "name": "Postman",
       "rate": 3,
