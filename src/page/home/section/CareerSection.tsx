@@ -10,6 +10,7 @@ import { DefineFontSize } from "@/theme/fontSize";
 import { MediaSize } from "@/theme/mediaSize";
 import { DefineSpacing } from "@/theme/spacing";
 import { useEffect, useRef, useState } from "react";
+import ShuffleText from "shuffle-text";
 import styled from "styled-components";
 type Props = {
   odd?: boolean;
@@ -150,6 +151,60 @@ export default function CareerSection({ odd = false }: Props) {
   const [yearHeights, setYearHeights] = useState<number[]>([]);
   const [lineHeights, setLineHeights] = useState<number[]>([]);
 
+  const companyRefs = useRef<(HTMLElement | null)[][]>([]);
+  const employmentTypeRefs = useRef<(HTMLElement | null)[][]>([]);
+  const roleRefs = useRef<(HTMLElement | null)[][]>([]);
+  const descriptionRefs = useRef<(HTMLElement | null)[][]>([]);
+  const outlookTitleRef = useRef<HTMLHeadingElement | null>(null);
+  const outlookDescriptionRef = useRef<HTMLParagraphElement | null>(null);
+  const outlookContainerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    if (outlookContainerRef.current) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) return;
+          [outlookTitleRef.current, outlookDescriptionRef.current].forEach(
+            (el) => {
+              if (el) new ShuffleText(el).start();
+            },
+          );
+          observer.disconnect();
+        },
+        { threshold: 0.8 },
+      );
+      observer.observe(outlookContainerRef.current);
+      observers.push(observer);
+    }
+
+    historyRefs.current.forEach((group, groupIndex) => {
+      group?.forEach((el, careerIndex) => {
+        if (!el) return;
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (!entry.isIntersecting) return;
+            [
+              companyRefs.current[groupIndex]?.[careerIndex],
+              employmentTypeRefs.current[groupIndex]?.[careerIndex],
+              roleRefs.current[groupIndex]?.[careerIndex],
+              descriptionRefs.current[groupIndex]?.[careerIndex],
+            ].forEach((textEl) => {
+              if (textEl) new ShuffleText(textEl).start();
+            });
+            observer.disconnect();
+          },
+          { threshold: 0.8 },
+        );
+        observer.observe(el);
+        observers.push(observer);
+      });
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
   useEffect(() => {
     setYearHeights(yearBoxRefs.current.map((ref) => ref?.offsetHeight ?? 0));
     setLineHeights(
@@ -199,14 +254,45 @@ export default function CareerSection({ odd = false }: Props) {
                   }}
                 >
                   <Stack space="M">
-                    <StyledCompanyName>{career.company}</StyledCompanyName>
+                    <StyledCompanyName
+                      ref={(el) => {
+                        if (!companyRefs.current[groupIndex])
+                          companyRefs.current[groupIndex] = [];
+                        companyRefs.current[groupIndex][careerIndex] = el;
+                      }}
+                    >
+                      {career.company}
+                    </StyledCompanyName>
                     <Stack direction="row" space="S" alignItems="baseline">
-                      <StyledEmploymentType>
+                      <StyledEmploymentType
+                        ref={(el) => {
+                          if (!employmentTypeRefs.current[groupIndex])
+                            employmentTypeRefs.current[groupIndex] = [];
+                          employmentTypeRefs.current[groupIndex][careerIndex] =
+                            el;
+                        }}
+                      >
                         {career.employmentType}
                       </StyledEmploymentType>
-                      <StyledRole>{career.role.join("・")}</StyledRole>
+                      <StyledRole
+                        ref={(el) => {
+                          if (!roleRefs.current[groupIndex])
+                            roleRefs.current[groupIndex] = [];
+                          roleRefs.current[groupIndex][careerIndex] = el;
+                        }}
+                      >
+                        {career.role.join("・")}
+                      </StyledRole>
                     </Stack>
-                    <StyledDescritpion>{career.description}</StyledDescritpion>
+                    <StyledDescritpion
+                      ref={(el) => {
+                        if (!descriptionRefs.current[groupIndex])
+                          descriptionRefs.current[groupIndex] = [];
+                        descriptionRefs.current[groupIndex][careerIndex] = el;
+                      }}
+                    >
+                      {career.description}
+                    </StyledDescritpion>
                   </Stack>
                 </StyledHistoryBox>
               ))}
@@ -224,12 +310,12 @@ export default function CareerSection({ odd = false }: Props) {
             >
               2026
             </StyledYearBox>
-            <StyledCareerOutlook>
+            <StyledCareerOutlook ref={outlookContainerRef}>
               <Stack space="S">
-                <StyledCareerOutlookTitle>
+                <StyledCareerOutlookTitle ref={outlookTitleRef}>
                   設計から実装までやり切るUI/UXデザイナーへ
                 </StyledCareerOutlookTitle>
-                <StyledCareerOutlookDescription>
+                <StyledCareerOutlookDescription ref={outlookDescriptionRef}>
                   UI/UXデザイナーとして、ユーザーが迷わず使え、自然に行動できる体験を提供していきたいと考えています。これまで設計から実装まで一貫して担ってきた経験を活かし、表層的なデザインに留まらず、情報設計や導線設計まで含めた体験設計を強化していきます。今後はユーザー体験と事業成果の両立を意識し、継続的な改善を通じてプロダクト価値の向上に貢献していきます。
                 </StyledCareerOutlookDescription>
               </Stack>
