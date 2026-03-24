@@ -111,6 +111,12 @@
       "overview": "ユーザーとドライバーが即時にコミュニケーションできる通話機能を実装。状況に応じた連絡手段を提供し、乗車前の不確実性を低減。",
       "environment": "Amazon Chime, Laravel, Figma, Next.js",
       "inCharge": "要件定義/UX設計/UIデザイン/バックエンド実装/フロントエンド実装/API連携調整"
+    },
+    {
+      "projectName": "Noruuu-Sharing(オンデマンドMaaSアプリ) / 車両動態監視機能実装",
+      "overview": "車両の現在位置をリアルタイムに可視化する動態監視機能を実装。ユーザーおよびオペレーターが車両状況を直感的に把握できる環境を構築し、運行管理の精度と顧客体験を向上。",
+      "environment": "Laravel, Figma, Next.js",
+      "inCharge": "要件定義/UX設計/UIデザイン/バックエンド実装/フロントエンド実装/API連携調整"
     }
   ]
 }

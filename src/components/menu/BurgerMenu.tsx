@@ -22,7 +22,7 @@ export const BurgerMenu = styled.button<{ open: boolean }>`
     left: 0;
     width: 100%;
     height: 2px; /* 線の太さ */
-    background: #333;
+    background: #222;
     transition: all 0.3s ease-in-out;
   }
 
@@ -66,8 +66,8 @@ const StyledBurgerMenu = styled.div`
   background-color: white;
   height: 44px;
   padding: 8px;
-  border-left: 1px solid #333;
-  border-bottom: 1px solid #333;
+  border-left: 1px solid #222;
+  border-bottom: 1px solid #222;
   display: flex;
   align-items: center;
   justify-content: center;

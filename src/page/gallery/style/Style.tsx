@@ -38,7 +38,7 @@ export const Description = styled.p`
 export const Square = styled.div`
   width: 36px;
   height: 36px;
-  background-color: black;
+  background-color: ${DefineColor.black};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,6 +64,6 @@ export const OlNumber = styled.ol`
 `;
 export const Item = styled.li`
   text-align: left;
-  color: black;
+  color: ${DefineColor.black};
   line-height: 1.5;
 `;

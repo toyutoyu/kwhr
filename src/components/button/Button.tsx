@@ -1,3 +1,4 @@
+import { DefineColor } from "@/theme/color";
 import { MediaSize } from "@/theme/mediaSize";
 import { DefineSpacing } from "@/theme/spacing";
 import { ReactNode } from "react";
@@ -14,22 +15,22 @@ type Props = {
 const StyledButton = styled.button`
   position: relative;
   padding: ${DefineSpacing.S} ${DefineSpacing.M};
-  background: black;
+  background: ${DefineColor.black};
   color: white;
   width: fit-content;
   box-sizing: border-box;
   transition: all 150ms linear;
   &:active {
     background: white;
-    color: black;
-    outline: 1px solid black;
+    color: ${DefineColor.black};
+    outline: 1px solid ${DefineColor.black};
     outline-offset: -1px;
   }
   @media screen and (min-width: ${MediaSize.S}) {
     &:hover {
       background: white;
-      color: black;
-      outline: 1px solid black;
+      color: ${DefineColor.black};
+      outline: 1px solid ${DefineColor.black};
       outline-offset: -1px;
     }
   }

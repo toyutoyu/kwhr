@@ -19,7 +19,7 @@ const Card = styled.div`
   width: 100%;
   max-width: 540px;
   min-height: 120px;
-  border: 1px solid black;
+  border: 1px solid ${DefineColor.black};
   transition: transform 150ms linear;
 
   &:hover,
@@ -56,12 +56,14 @@ const StyledPortfolioImage = styled.div`
   height: 50%;
   box-shadow: ${DefineShadow.LEVEL1};
 `;
-
-export default function GallerySection() {
+type Props = {
+  odd?: boolean;
+};
+export default function GallerySection({ odd = false }: Props) {
   const { setLastElement, isVisible } = useScroll();
   return (
     <Section id="gallery" ref={setLastElement}>
-      <SectionTitle odd isVisible={isVisible}>
+      <SectionTitle odd={odd} isVisible={isVisible}>
         GALLERY
       </SectionTitle>
       <StyledInnerSection>

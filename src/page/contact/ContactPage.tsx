@@ -30,7 +30,7 @@ const StyledLabel = styled.label`
 `;
 
 const StyledInput = styled.input`
-  border: 1px solid black;
+  border: 1px solid #222;
   height: 40px;
   width: 100%;
   padding: ${DefineSpacing.S};
@@ -41,7 +41,7 @@ const StyledInput = styled.input`
 `;
 
 const StyledTextArea = styled.textarea`
-  border: 1px solid black;
+  border: 1px solid #222;
   min-height: 200px;
   height: 240px;
   width: 100%;
@@ -94,7 +94,7 @@ export default function ContactPage() {
       {
         method: "post",
         body: JSON.stringify(data),
-      }
+      },
     );
   };
 
@@ -111,7 +111,7 @@ export default function ContactPage() {
           {
             method: "post",
             body: JSON.stringify({ token: recaptchaToken }),
-          }
+          },
         );
         if (res) {
           const json = await res.json();
@@ -123,7 +123,7 @@ export default function ContactPage() {
       }
       setIsLoading(false);
     },
-    [executeRecaptcha]
+    [executeRecaptcha],
   );
   useEffect(() => {
     if (!isSendSuccessed) return;

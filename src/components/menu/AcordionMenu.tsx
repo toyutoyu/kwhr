@@ -1,3 +1,4 @@
+import { DefineColor } from "@/theme/color";
 import styled from "styled-components";
 
 export const Menu = styled.button<{ open: boolean; isBlack: boolean }>`
@@ -17,7 +18,8 @@ export const Menu = styled.button<{ open: boolean; isBlack: boolean }>`
     width: 100%;
     height: 2px; /* 線の太さ */
 
-    background: ${({ isBlack }) => (isBlack ? "#333" : "white")};
+    background: ${({ isBlack }) =>
+      isBlack ? `${DefineColor.black}` : "white"};
     transition: all 0.3s ease-in-out;
   }
 

@@ -3,12 +3,16 @@ import { StyledInnerSection } from "@/components/section/style/Style";
 import useScroll from "@/hook/useScroll";
 import SectionTitle from "../../../components/section/SectionTitle";
 import WorksSectionContent from "./WroksSectionContent";
-
-export default function WorksSection() {
+type Props = {
+  odd?: boolean;
+};
+export default function WorksSection({ odd = false }: Props) {
   const { setLastElement, isVisible } = useScroll();
   return (
     <Section id="works" ref={setLastElement}>
-      <SectionTitle isVisible={isVisible}>WORKS</SectionTitle>
+      <SectionTitle isVisible={isVisible} odd={odd}>
+        WORKS
+      </SectionTitle>
       <StyledInnerSection>
         <WorksSectionContent />
       </StyledInnerSection>

@@ -8,9 +8,9 @@ const StyledOuter = styled.div<{ maxHeight: number }>`
   overflow: hidden;
   max-height: ${({ maxHeight }) => `${maxHeight}px`};
   transition: max-height 300ms ease-in-out;
-  border-bottom: ${({ maxHeight }) => (maxHeight > 0 ? "1px solid #333" : "0")};
-  border-left: 1px solid #333;
-  border-right: 1px solid #333;
+  border-bottom: ${({ maxHeight }) => (maxHeight > 0 ? "1px solid #222" : "0")};
+  border-left: 1px solid #222;
+  border-right: 1px solid #222;
 `;
 
 const StyledInner = styled.div`

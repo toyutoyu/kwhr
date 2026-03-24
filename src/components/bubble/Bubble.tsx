@@ -18,7 +18,7 @@ const Content = styled.div`
 `;
 
 const Arrow = styled.div`
-  background-color: black;
+  background-color: #222;
   position: absolute;
   width: 70px;
   height: 60px;

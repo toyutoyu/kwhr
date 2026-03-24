@@ -7,14 +7,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import SectionTitle from "../../../components/section/SectionTitle";
-
-export default function ContactSection() {
+type Props = {
+  odd?: boolean;
+};
+export default function ContactSection({ odd = false }: Props) {
   const { setLastElement, isVisible } = useScroll();
 
   const router = useRouter();
   return (
     <Section id="contact" ref={setLastElement}>
-      <SectionTitle odd isVisible={isVisible}>
+      <SectionTitle odd={odd} isVisible={isVisible}>
         CONTACT
       </SectionTitle>
       <StyledInnerSection>

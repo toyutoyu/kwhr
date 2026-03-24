@@ -73,12 +73,14 @@ const Th = styled.th`
 const Td = styled.td`
   padding: ${DefineSpacing.XS} ${DefineSpacing.S};
 `;
-
-export default function ProfileSection() {
+type Props = {
+  odd?: boolean;
+};
+export default function ProfileSection({ odd }: Props) {
   const { setLastElement, isVisible } = useScroll();
   return (
     <Section id="profile" ref={setLastElement}>
-      <SectionTitle odd isVisible={isVisible}>
+      <SectionTitle odd={odd} isVisible={isVisible}>
         PROFILE
       </SectionTitle>
       <StyledProfile>

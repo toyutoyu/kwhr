@@ -7,11 +7,17 @@ import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
 import SectionTitle from "../../../components/section/SectionTitle";
 import SkillSectionContent from "./SkillSectionContent";
 ChartJS.register(ArcElement, Tooltip, Legend);
-export default function SkillSection() {
+
+type Props = {
+  odd?: boolean;
+};
+export default function SkillSection({ odd = false }: Props) {
   const { setLastElement, isVisible } = useScroll();
   return (
     <Section id="skill" ref={setLastElement}>
-      <SectionTitle isVisible={isVisible}>SKILL</SectionTitle>
+      <SectionTitle isVisible={isVisible} odd={odd}>
+        SKILL
+      </SectionTitle>
       <StyledInnerSection>
         <SkillRadarChart />
         <SkillSectionContent />

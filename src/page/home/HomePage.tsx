@@ -5,6 +5,7 @@ import ContactSection from "@/page/home/section/ContactSection";
 import ProfileSection from "@/page/home/section/ProfileSection";
 import SkillSection from "@/page/home/section/SkillSection";
 import WorksSection from "@/page/home/section/WorksSection";
+import CareerSection from "./section/CareerSection";
 import FirstViewSection from "./section/FirstViewSection";
 import GallerySection from "./section/GallerySection";
 
@@ -19,10 +20,11 @@ export default function HomePage() {
       <Stack space="X3L">
         <FirstViewSection />
         <ProfileSection />
+        <CareerSection odd />
         <SkillSection />
-        <GallerySection />
+        <GallerySection odd />
         <WorksSection />
-        <ContactSection />
+        <ContactSection odd />
       </Stack>
     </main>
   );

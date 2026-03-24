@@ -15,13 +15,13 @@ const StyledSectionTitleWrapper = styled.div<{ isVisible: boolean }>`
   transform: ${({ isVisible }) =>
     isVisible ? "translateX(0)" : "translateX(-2000px)"};
 `;
-const StyledSectionTitle = styled.h1<{ $odd: boolean }>`
+const StyledSectionTitle = styled.h2<{ $odd: boolean }>`
   position: relative;
   font-size: 48px;
   letter-spacing: 0.5rem;
   font-weight: 700;
-  color: ${({ $odd }) => ($odd ? "black" : "white")};
-  ${({ $odd }) => !$odd && "-webkit-text-stroke: 1px black;"}
+  color: ${({ $odd }) => ($odd ? "#222" : "white")};
+  ${({ $odd }) => !$odd && "-webkit-text-stroke: 1px #222;"}
   text-align: center;
   z-index: 1;
   @media screen and (min-width: ${MediaSize.M}) {
@@ -37,8 +37,8 @@ const StyledSectionTitleShadow = styled.h1<{ $odd: boolean }>`
   font-size: 48px;
   text-align: center;
   letter-spacing: 0.5rem;
-  ${({ $odd }) => $odd && "-webkit-text-stroke: 1px black;"}
-  color: ${({ $odd }) => ($odd ? "transparent" : "black")};
+  ${({ $odd }) => $odd && "-webkit-text-stroke: 1px #222;"}
+  color: ${({ $odd }) => ($odd ? "transparent" : "#222")};
   top: 4px;
   left: 50%;
   transform: translateX(-52%);
