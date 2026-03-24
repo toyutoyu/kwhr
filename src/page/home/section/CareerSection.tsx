@@ -32,8 +32,7 @@ const StyledYearBox = styled.div<{ $lineHeight?: number; $top?: number }>`
     position: absolute;
     top: ${({ $top }) => $top}px;
     width: 1px;
-    height: ${({ $lineHeight }) =>
-      `calc(${$lineHeight}px + ${DefineSpacing.X3L})`};
+    height: ${({ $lineHeight }) => $lineHeight}px;
     background-color: ${DefineColor.black};
   }
 
@@ -154,9 +153,14 @@ export default function CareerSection({ odd = false }: Props) {
   useEffect(() => {
     setYearHeights(yearBoxRefs.current.map((ref) => ref?.offsetHeight ?? 0));
     setLineHeights(
-      historyRefs.current.map((refs) =>
-        refs.reduce((sum, ref) => sum + (ref?.offsetHeight ?? 0), 0),
-      ),
+      yearBoxRefs.current.slice(0, -1).map((ref, i) => {
+        const nextRef = yearBoxRefs.current[i + 1];
+        if (!ref || !nextRef) return 0;
+        return (
+          nextRef.getBoundingClientRect().top -
+          ref.getBoundingClientRect().bottom
+        );
+      }),
     );
   }, [myCareer]);
 
@@ -211,7 +215,15 @@ export default function CareerSection({ odd = false }: Props) {
         </Stack>
         <Stack>
           <Stack justifyContent="center" alignItems="center">
-            <StyledYearBox $lineHeight={20}>2026</StyledYearBox>
+            <StyledYearBox
+              $lineHeight={20}
+              $top={80}
+              ref={(el) => {
+                yearBoxRefs.current[groupedCareer.length] = el;
+              }}
+            >
+              2026
+            </StyledYearBox>
             <StyledCareerOutlook>
               <Stack space="S">
                 <StyledCareerOutlookTitle>
