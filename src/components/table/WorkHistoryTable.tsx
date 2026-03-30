@@ -44,22 +44,24 @@ export default function WorkHistoryTable({
 }: Props) {
   return (
     <table>
-      <tr>
-        <Th>プロジェクト名</Th>
-        <Td>{projectName}</Td>
-      </tr>
-      <tr>
-        <Th>概要</Th>
-        <Td>{overview}</Td>
-      </tr>
-      <tr>
-        <Th>開発環境</Th>
-        <Td>{environment}</Td>
-      </tr>
-      <tr>
-        <Th>担当</Th>
-        <Td>{inCharge}</Td>
-      </tr>
+      <tbody>
+        <tr>
+          <Th>プロジェクト名</Th>
+          <Td>{projectName}</Td>
+        </tr>
+        <tr>
+          <Th>概要</Th>
+          <Td>{overview}</Td>
+        </tr>
+        <tr>
+          <Th>開発環境</Th>
+          <Td>{environment}</Td>
+        </tr>
+        <tr>
+          <Th>担当</Th>
+          <Td>{inCharge}</Td>
+        </tr>
+      </tbody>
     </table>
   );
 }

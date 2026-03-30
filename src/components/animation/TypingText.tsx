@@ -14,7 +14,9 @@ const blink = keyframes`
 `;
 const letterSpacingNum = 0.5;
 
-const StyledTypingText = styled.p<{ textLength: number; textSizeRem: number }>`
+const StyledTypingText = styled.p.withConfig({
+  shouldForwardProp: (prop) => !["textLength", "textSizeRem"].includes(prop),
+})<{ textLength: number; textSizeRem: number }>`
   width: ${({ textLength }) => {
     const letterSpacingTotal = (textLength - 1) * (letterSpacingNum / 2);
     return `calc(${textLength}ch + ${letterSpacingTotal}rem)`;

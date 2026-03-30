@@ -23,7 +23,8 @@
     "react-lottie": "^1.2.10",
     "shuffle-text": "^0.5.1",
     "styled-components": "^6.1.14",
-    "styled-reset": "^4.5.2"
+    "styled-reset": "^4.5.2",
+    "swiper": "^12.1.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

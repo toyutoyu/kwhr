@@ -3,7 +3,9 @@ import { DefineSpacing } from "@/theme/spacing";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-const StyledOuter = styled.div<{ maxHeight: number }>`
+const StyledOuter = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== "maxHeight",
+})<{ maxHeight: number }>`
   width: 100%;
   overflow: hidden;
   max-height: ${({ maxHeight }) => `${maxHeight}px`};

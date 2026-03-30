@@ -43,7 +43,7 @@ const StyledList = styled.li`
     margin: 0;
   }
 `;
-const StyledAnchor = styled.a`
+const StyledAnchor = styled(Link)`
   transition: all 350ms ease-in-out;
   position: relative;
   &::before {
@@ -130,9 +130,7 @@ export default function Header() {
           <StyledUl>
             {headerItems.map((item, index) => (
               <StyledList key={`header-item-${index}`}>
-                <StyledAnchor>
-                  <Link href={item.href}>{item.title}</Link>
-                </StyledAnchor>
+                <StyledAnchor href={item.href}>{item.title}</StyledAnchor>
               </StyledList>
             ))}
           </StyledUl>

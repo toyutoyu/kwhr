@@ -24,7 +24,9 @@ type Props = {
   style?: React.CSSProperties;
   isVisible: boolean;
 };
-const StyledBoxWrapper = styled.div<{ isVisible: boolean }>`
+const StyledBoxWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== "isVisible",
+})<{ isVisible: boolean }>`
   max-width: 800px;
   width: 100%;
   box-shadow: ${DefineShadow.LEVEL4};

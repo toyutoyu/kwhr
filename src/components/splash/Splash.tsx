@@ -30,7 +30,9 @@ const fadeOut = keyframes`
 `;
 
 // 初期状態のスタイル
-const StyledSplash = styled.div<{ isComplete: boolean }>`
+const StyledSplash = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== "isComplete",
+})<{ isComplete: boolean }>`
   position: fixed;
   inset: 0;
   z-index: 10000;

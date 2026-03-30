@@ -173,7 +173,7 @@ export default function CareerSection({ odd = false }: Props) {
           );
           observer.disconnect();
         },
-        { threshold: 0.8 },
+        { threshold: 1 },
       );
       observer.observe(outlookContainerRef.current);
       observers.push(observer);
@@ -195,7 +195,7 @@ export default function CareerSection({ odd = false }: Props) {
             });
             observer.disconnect();
           },
-          { threshold: 0.8 },
+          { threshold: 1 },
         );
         observer.observe(el);
         observers.push(observer);

@@ -106,18 +106,20 @@ export default function ProfileSection({ odd }: Props) {
             </Stack>
 
             <Table>
-              <tr>
-                <Th>生年月日</Th>
-                <Td>1994/11/4</Td>
-              </tr>
-              <tr>
-                <Th>出身地</Th>
-                <Td>大阪</Td>
-              </tr>
-              <tr>
-                <Th>趣味</Th>
-                <Td>登山/ボードゲーム/カラオケ</Td>
-              </tr>
+              <tbody>
+                <tr>
+                  <Th>生年月日</Th>
+                  <Td>1994/11/4</Td>
+                </tr>
+                <tr>
+                  <Th>出身地</Th>
+                  <Td>大阪</Td>
+                </tr>
+                <tr>
+                  <Th>趣味</Th>
+                  <Td>登山/ボードゲーム/カラオケ</Td>
+                </tr>
+              </tbody>
             </Table>
           </Stack>
           <Bubble>

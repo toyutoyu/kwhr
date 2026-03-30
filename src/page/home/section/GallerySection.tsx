@@ -68,6 +68,32 @@ export default function GallerySection({ odd = false }: Props) {
       </SectionTitle>
       <StyledInnerSection>
         <Stack alignItems="center" justifyContent="center" space="M">
+          <Link href="/gallery/004">
+            <Card>
+              <Stack direction="row" alignItems="flex-start" space="M">
+                <StyledPortfolioImage>
+                  <Image
+                    src="/images/gallery/ガントチャート.png"
+                    alt="工程管理ソフトのムードボード"
+                    width={1}
+                    height={1}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+                </StyledPortfolioImage>
+
+                <Stack space="S">
+                  <Title>工程管理ソフトのムードボード</Title>
+                  <Description>
+                    建設業界向け工程管理システムのUIデザイン
+                    現場の工程管理や工程表作成を効率化するWebアプリケーションのUIデザインを担当しました。
+                  </Description>
+                </Stack>
+              </Stack>
+            </Card>
+          </Link>
           <Link href="/gallery/003">
             <Card>
               <Stack direction="row" alignItems="flex-start" space="M">

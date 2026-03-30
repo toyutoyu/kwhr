@@ -36,7 +36,9 @@ const StyledButton = styled.button`
   }
 `;
 
-const StyledPlaceholder = styled.div<{ loading: boolean }>`
+const StyledPlaceholder = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== "loading",
+})<{ loading: boolean }>`
   display: flex;
   gap: 4px;
   align-items: center;

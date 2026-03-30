@@ -1,7 +1,9 @@
 import { DefineColor } from "@/theme/color";
 import styled from "styled-components";
 
-export const Menu = styled.button<{ open: boolean; isBlack: boolean }>`
+export const Menu = styled.button.withConfig({
+  shouldForwardProp: (prop) => !["open", "isBlack"].includes(prop),
+})<{ open: boolean; isBlack: boolean }>`
   position: relative;
   width: 20px;
   height: 20px;

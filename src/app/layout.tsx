@@ -40,6 +40,7 @@ export default function RootLayout({
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
+          precedence="default"
         />
         <StyledBody
           className={`${chakraPetch.className} ${chakraPetch.variable} ${notojp.variable} ${makinas4.variable}`}

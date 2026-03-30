@@ -8,7 +8,9 @@ type Props = {
   isVisible?: boolean;
 };
 
-const StyledSectionTitleWrapper = styled.div<{ isVisible: boolean }>`
+const StyledSectionTitleWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== "isVisible",
+})<{ isVisible: boolean }>`
   position: relative;
   margin-bottom: 24px;
   transition: transform 0.5s ease;
