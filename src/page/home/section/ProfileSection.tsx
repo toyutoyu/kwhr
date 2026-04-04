@@ -29,8 +29,38 @@ const StyledProfileInner = styled.div`
     align-items: flex-start;
   }
 `;
-
+const StyledProfileAvatarWrapper = styled.div`
+  position: relative;
+  width: 200px;
+  height: 200px;
+`;
+const StyledNameCircleWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  -webkit-animation: rotation 18s linear infinite;
+  animation: rotation 18s linear infinite;
+  @media screen and (min-width: ${MediaSize.S}) {
+    width: 240px;
+    height: 240px;
+  }
+  @keyframes rotation {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+`;
 const StyledProfileAvatar = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 160px;
   width: 160px;
   background-image: url("/images/self-image.png");
@@ -92,7 +122,20 @@ export default function ProfileSection({ odd }: Props) {
               alignItems="center"
               space="XS"
             >
-              <StyledProfileAvatar />
+              <StyledProfileAvatarWrapper>
+                <StyledNameCircleWrapper>
+                  <Image
+                    src="/images/name_circle.svg"
+                    alt="名前円形アニメーション"
+                    sizes="100vw"
+                    fill
+                    style={{
+                      width: "100%",
+                    }}
+                  />
+                </StyledNameCircleWrapper>
+                <StyledProfileAvatar />
+              </StyledProfileAvatarWrapper>
               <Image
                 src="/images/QRcode.svg"
                 alt="QRコード"
